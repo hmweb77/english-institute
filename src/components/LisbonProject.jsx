@@ -110,7 +110,7 @@ export default function LisbonProject() {
                     <div className="flex items-center gap-2">
                       <Users className="w-4 h-4 text-teal-600" />
                       <a
-                        href="https://www.linkedin.com/company/lisbon-project"
+                        href="https://www.linkedin.com/company/lisbonprojectassociation/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:underline text-[#9B0E24] transition-colors"

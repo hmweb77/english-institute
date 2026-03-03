@@ -32,7 +32,7 @@ export default function Footer() {
     { icon: Facebook, href: "https://web.facebook.com/iflimmersion", label: "Facebook", color: "hover:bg-blue-500" },
     { icon: Instagram, href: "https://www.instagram.com/iflimmersion/", label: "Instagram", color: "hover:bg-pink-500" },
     { icon: Youtube, href: "https://www.youtube.com/channel/UC_8Xi94QukzHuN7X4SEMHUA", label: "YouTube", color: "hover:bg-red-500" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/iflimmersion/", label: "LinkedIn", color: "hover:bg-blue-600" }
+    { icon: Linkedin, href: "https://www.linkedin.com/in/iflimmersion/", label: "LinkedIn", color: "hover:bg-blue-600" }
   ];
 
   const quickLinks = [

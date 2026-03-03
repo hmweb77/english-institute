@@ -20,9 +20,9 @@ export default function HeroSection({ onEnrollClick, onTestClick }) {
 
   // Background images
   const backgrounds = [
-    '/optimized/her1-1080.webp',
-    '/optimized/hero2-1080.webp',
-    '/algarve.png'
+    '/photo_2026-03-03_17-25-20.jpg',
+    '/photo_2026-03-03_17-25-24.jpg',
+    '/photo_2026-03-03_17-25-27.jpg'
   ];
 
   // English words to animate
@@ -185,7 +185,7 @@ export default function HeroSection({ onEnrollClick, onTestClick }) {
           >
             Inscreve-te Agora →
           </button>
-          <Link className="px-8 md:px-10 py-4 md:py-6 text-base md:text-lg font-semibold text-white rounded-full min-w-[200px] md:min-w-[220px] bg-white/10 hover:bg-white hover:text-[#012169] border-2 border-white transition-colors duration-200 flex items-center justify-center gap-2" href="https://form.jotform.com/222385082740353" target="_blank" >
+          <Link className="px-8 md:px-10 py-4 md:py-6 text-base md:text-lg font-semibold text-white rounded-full min-w-[200px] md:min-w-[220px] bg-white/10 hover:bg-white hover:text-[#012169] border-2 border-white transition-colors duration-200 flex items-center justify-center gap-2" href="https://form.jotform.com/222384841866364" target="_blank" >
               <Play className="w-5 h-5" />
               Faz o Teste Gratuito
           </Link>
