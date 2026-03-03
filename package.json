@@ -1,0 +1,29 @@
+{
+  "name": "english-school",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "optimize-images": "node src/scripts/optimize-images.js"
+  },
+  "dependencies": {
+    "firebase": "^12.5.0",
+    "framer-motion": "^12.23.26",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.553.0",
+    "next": "15.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^16.0.3",
+    "@tailwindcss/postcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.1",
+    "tailwindcss": "^4"
+  }
+}
