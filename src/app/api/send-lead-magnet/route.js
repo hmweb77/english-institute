@@ -13,12 +13,11 @@ export async function POST(request) {
       );
     }
 
-    // Save to Airtable – field names match "CRM All leads" table.
+    // Save to Airtable – only email, first name, phone (field names match "CRM All leads" table).
     const airtableData = {
       'Email Address': email.trim(),
       'First Name': (name.trim().split(' ')[0] || name).trim(),
       'Phone Number': whatsapp.trim(),
-      'Target Language': 'IFLI English | Free Resources',
     };
 
     let airtableRecord = null;
