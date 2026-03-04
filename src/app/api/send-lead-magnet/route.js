@@ -14,8 +14,10 @@ export async function POST(request) {
     }
 
     // Save to Airtable – field names must match "CRM All leads" table exactly.
-    // Target Language: send string for Single select; for Multi select use array of option strings.
-    const targetLanguageOption = 'IFLI INGLES | Recursos Gratuitos';
+    // Target Language: value must match an existing option in your Airtable "Target Language" single-select.
+    // Override via AIRTABLE_LEADS_TARGET_LANGUAGE in .env (e.g. "IFLI Inglês | Recursos Gratuitos" after you add it in Airtable).
+    const targetLanguageOption =
+      process.env.AIRTABLE_LEADS_TARGET_LANGUAGE || 'IFLI Português | Recursos Gratuitos';
     const airtableData = {
       'Email Address': email.trim(),
       'First Name': (name.trim().split(' ')[0] || name).trim(),
