@@ -19,7 +19,7 @@ export async function POST(request) {
       'Email Address': email,
       'First Name': name.split(' ')[0] || name,
       'Phone Number': whatsapp,
-      'Target Language': ['IFLI Português | Recursos Gratuitos'],
+      'Target Language': ['IFLI INGLES | Recursos Gratuitos'],
     };
 
     let airtableRecord = null;
