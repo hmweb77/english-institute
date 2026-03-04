@@ -44,8 +44,18 @@ export const createLead = async (leadData) => {
   );
 
   if (!response.ok) {
-    const error = await response.json();
-    throw new Error(error.error?.message || 'Failed to create lead in Airtable');
+    let errorBody;
+    try {
+      errorBody = await response.json();
+    } catch {
+      errorBody = { message: await response.text() || `HTTP ${response.status}` };
+    }
+    const message =
+      errorBody.error?.message ||
+      errorBody.message ||
+      (typeof errorBody === 'string' ? errorBody : 'Failed to create lead in Airtable');
+    console.error('Airtable API error response:', JSON.stringify(errorBody));
+    throw new Error(message);
   }
 
   return await response.json();

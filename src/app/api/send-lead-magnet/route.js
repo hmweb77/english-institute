@@ -13,13 +13,14 @@ export async function POST(request) {
       );
     }
 
-    // Save to Airtable – field names match "CRM All leads" table.
-    // Target Language: use array for Multiple select, or exact option string for Single select.
+    // Save to Airtable – field names must match "CRM All leads" table exactly.
+    // Target Language: send string for Single select; for Multi select use array of option strings.
+    const targetLanguageOption = 'IFLI INGLES | Recursos Gratuitos';
     const airtableData = {
-      'Email Address': email,
-      'First Name': name.split(' ')[0] || name,
-      'Phone Number': whatsapp,
-      'Target Language': ['IFLI INGLES | Recursos Gratuitos'],
+      'Email Address': email.trim(),
+      'First Name': (name.trim().split(' ')[0] || name).trim(),
+      'Phone Number': whatsapp.trim(),
+      'Target Language': targetLanguageOption,
     };
 
     let airtableRecord = null;
