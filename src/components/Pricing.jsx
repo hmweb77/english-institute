@@ -155,7 +155,7 @@ export default function PricingSection({ onSelectPlan }) {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-8 mt-16">
           {plans.map((plan, index) => {
             const IconComponent = plan.icon;
             const hasBadge = plan.badge || plan.seatsLeft;
@@ -168,14 +168,13 @@ export default function PricingSection({ onSelectPlan }) {
                 onHoverEnd={() => setHoveredPlan(null)}
               >
                 <motion.div
-                  className={`relative p-8 flex flex-col bg-white rounded-2xl overflow-hidden ${
+                  className={`relative p-4 sm:p-6 md:p-8 flex flex-col bg-white rounded-2xl overflow-hidden ${
                     plan.featured
                       ? "shadow-[0px_30px_60px_-12px_rgba(0,0,0,0.25)] ring-2 ring-[#C8102E]"
                       : "shadow-[0px_20px_40px_-12px_rgba(0,0,0,0.15)]"
-                  }`}
+                  } ${hasBadge ? "min-h-[540px] md:min-h-[720px]" : "min-h-[500px] md:min-h-[690px]"}`}
                   style={{
                     height: "100%",
-                    minHeight: hasBadge ? "720px" : "690px",
                   }}
                   data-testid={`card-plan-${plan.name.toLowerCase()}`}
                   whileHover={{
