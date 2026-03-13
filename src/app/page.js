@@ -24,6 +24,10 @@ const TestimonialsSection = dynamic(() => import("@/components/Testimonials"), {
   loading: () => <div className="min-h-screen bg-gray-50 animate-pulse" />
 });
 
+const UpcomingEventsSection = dynamic(() => import("@/components/UpcomingEvents"), {
+  loading: () => <div className="min-h-[400px] bg-gray-50 animate-pulse" />
+});
+
 const LeadMagnetSection = dynamic(() => import("@/components/LeadMagnet"), {
   loading: () => <div className="min-h-screen bg-[#C8102E] animate-pulse" />
 });
@@ -110,6 +114,7 @@ export default function Home() {
         <BenefitsSection />
         <PricingSection onSelectPlan={() => handleEnrollClick()} />
         <TestimonialsSection />
+        <UpcomingEventsSection />
         <LeadMagnetSection onSubmit={handleLeadMagnetSubmit} />
         <FinalCTASection onEnrollClick={() => handleEnrollClick()} />
         <Experiences2026Section />
