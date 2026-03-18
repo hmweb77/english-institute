@@ -13,10 +13,14 @@ export async function POST(request) {
       );
     }
 
-    // Save to Airtable – only email, first name, phone (field names match "CRM All leads" table).
+    const nameParts = name.trim().split(/\s+/);
+    const firstName = nameParts[0] || name.trim();
+    const lastName = nameParts.slice(1).join(' ') || '';
+
     const airtableData = {
       'Email Address': email.trim(),
-      'First Name': (name.trim().split(' ')[0] || name).trim(),
+      'First Name': firstName,
+      ...(lastName && { 'Last Name': lastName }),
       'Phone Number': whatsapp.trim(),
     };
 

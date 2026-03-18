@@ -18,8 +18,14 @@ export async function POST(request) {
     const senderName = process.env.NEXT_PUBLIC_BREVO_SENDER_NAME;
 
     // 1. Save to Airtable first
+    const nameParts = name.trim().split(/\s+/);
+    const firstName = nameParts[0] || name.trim();
+    const lastName = nameParts.slice(1).join(' ') || '';
+
     const airtableData = {
       'Name': name,
+      'First Name': firstName,
+      ...(lastName && { 'Last Name': lastName }),
       'Email': email,
       'WhatsApp': whatsapp,
       'Source': 'Lead Magnet - Free Resources',
