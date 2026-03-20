@@ -69,7 +69,7 @@ export default function LeadMagnetSection({ onSubmit }) {
       setShowSuccess(true);
 
       // Redirect to Google Classroom after a short delay so user sees success
-      const classroomUrl = "https://classroom.google.com/c/NzkyNzEyNzIzMzgw?cjc=clutbctc";
+      const classroomUrl = "https://classroom.google.com/c/ODQ3MDQyNzg1MzMw?cjc=3jlexck4";
       setTimeout(() => {
         window.location.href = classroomUrl;
       }, 1500);
