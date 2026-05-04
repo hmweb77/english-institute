@@ -3,7 +3,7 @@ import { useMemo, useState, useEffect } from "react";
 import { Lock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const JOURNEY_START = new Date("2026-07-05T00:00:00");
+const JOURNEY_START = new Date("2026-07-06T00:00:00");
 
 function useCountdown(targetDate) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -178,6 +178,7 @@ export default function FinalCTASection() {
           target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center gap-3 px-10 py-5 text-lg font-bold rounded-full bg-white text-[#9B0E24] overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.4)] transition-shadow duration-300"
+          id="btn-secure-spot"
           data-testid="button-enroll-final"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

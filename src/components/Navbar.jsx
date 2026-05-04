@@ -120,6 +120,7 @@ export default function Navbar({ onEnrollClick }) {
             <motion.button 
               onClick={onEnrollClick}
               className="relative px-6 py-2 bg-linear-to-r from-[#C8102E] to-[#A80D24] text-white rounded-full font-semibold overflow-hidden group"
+              id="btn-enroll-nav"
               data-testid="button-enroll-nav"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -190,6 +191,7 @@ export default function Navbar({ onEnrollClick }) {
                       ? "bg-[#C8102E] text-white"
                       : "hover:bg-[#C8102E]/10 text-[#012169] border-l-2 border-transparent hover:border-[#C8102E]"
                   }`}
+                  id={`btn-mobile-${link.href.slice(1)}`}
                   data-testid={`link-mobile-${link.label.toLowerCase()}`}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -222,6 +224,7 @@ export default function Navbar({ onEnrollClick }) {
                   setIsMobileMenuOpen(false);
                 }}
                 className="w-full px-4 py-3 bg-linear-to-r from-[#C8102E] to-[#A80D24] text-white rounded-xl font-semibold hover:shadow-lg transition-all duration-200"
+                id="btn-enroll-mobile"
                 data-testid="button-enroll-mobile"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}

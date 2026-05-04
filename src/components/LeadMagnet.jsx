@@ -272,6 +272,7 @@ export default function LeadMagnetSection({ onSubmit }) {
                         type="submit"
                         disabled={isSubmitting}
                         className="group relative w-full rounded-full py-6 text-base font-semibold bg-linear-to-r from-[#C8102E] to-[#A80D24] text-white overflow-hidden shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                        id="btn-lead-magnet-submit"
                         data-testid="button-download-guide"
                         whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                         whileTap={{ scale: isSubmitting ? 1 : 0.98 }}

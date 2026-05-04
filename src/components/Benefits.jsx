@@ -268,7 +268,7 @@ export default function BenefitsSection() {
             animate={isInView ? { opacity: [0.9, 1, 0.9] } : {}}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            Tudo pronto para começar? Lugares Limitados - Inscreve-te até 12 de abril de 2026.
+            Tudo pronto para começar? Lugares Limitados - Inscreve-te até 5 de julho de 2026.
           </motion.p>
          
         </motion.div>

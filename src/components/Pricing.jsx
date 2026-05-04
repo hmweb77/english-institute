@@ -130,7 +130,7 @@ export default function PricingSection({ onSelectPlan }) {
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-semibold">
-              Lugares Limitados - Inscreve-te até 12 de abril de 2026
+              Lugares Limitados - Inscreve-te até 5 de julho de 2026
             </span>
           </motion.div>
 
@@ -280,6 +280,7 @@ export default function PricingSection({ onSelectPlan }) {
                   <motion.button
                     className={`w-full relative rounded-full py-6 text-base font-semibold text-white overflow-hidden shadow-lg mt-auto`}
                     onClick={() => onSelectPlan(plan.name)}
+                    id={`btn-plan-${plan.name.toLowerCase()}`}
                     data-testid={`button-select-${plan.name.toLowerCase()}`}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}

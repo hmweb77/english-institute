@@ -181,11 +181,12 @@ export default function HeroSection({ onEnrollClick, onTestClick }) {
           <button
             className="px-8 md:px-10 py-4 md:py-6 text-base md:text-lg font-semibold rounded-full min-w-[200px] md:min-w-[220px] bg-[#C8102E] text-white hover:bg-[#A80D24] transition-colors"
             onClick={onEnrollClick}
+            id="btn-enroll-hero"
             data-testid="button-enroll-hero"
           >
             Inscreve-te Agora →
           </button>
-          <Link className="px-8 md:px-10 py-4 md:py-6 text-base md:text-lg font-semibold text-white rounded-full min-w-[200px] md:min-w-[220px] bg-white/10 hover:bg-white hover:text-[#012169] border-2 border-white transition-colors duration-200 flex items-center justify-center gap-2" href="https://form.jotform.com/222384841866364" target="_blank" >
+          <Link id="btn-free-test" className="px-8 md:px-10 py-4 md:py-6 text-base md:text-lg font-semibold text-white rounded-full min-w-[200px] md:min-w-[220px] bg-white/10 hover:bg-white hover:text-[#012169] border-2 border-white transition-colors duration-200 flex items-center justify-center gap-2" href="https://form.jotform.com/222384841866364" target="_blank" >
               <Play className="w-5 h-5" />
               Faz o Teste Gratuito
           </Link>

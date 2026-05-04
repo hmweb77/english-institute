@@ -307,6 +307,7 @@ export default function PortugueseTestModal({ open, onClose, onComplete }) {
                     className={`px-4 py-2 border-2 border-[#E3E5E8] rounded-xl font-medium text-[#012169] hover:bg-[#F5F6F7] transition-colors duration-200 flex items-center gap-2 ${
                       currentQuestion === 0 ? 'opacity-50 cursor-not-allowed' : ''
                     }`}
+                    id="btn-test-back"
                     data-testid="button-back"
                   >
                     <ArrowLeft className="w-4 h-4" />
@@ -318,6 +319,7 @@ export default function PortugueseTestModal({ open, onClose, onComplete }) {
                     className={`px-4 py-2 bg-[#C8102E] text-white rounded-xl font-medium hover:bg-[#A80D24] transition-colors duration-200 flex items-center gap-2 ${
                       selectedAnswer === null ? 'opacity-50 cursor-not-allowed' : ''
                     }`}
+                    id="btn-test-next"
                     data-testid="button-next"
                   >
                     {currentQuestion === questions.length - 1 ? "Finish" : "Next"}
@@ -389,6 +391,7 @@ export default function PortugueseTestModal({ open, onClose, onComplete }) {
                     type="submit"
                     disabled={isSubmitting}
                     className="flex-1 px-4 py-2 bg-[#C8102E] text-white rounded-xl font-medium hover:bg-[#A80D24] transition-colors duration-200 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    id="btn-test-submit"
                     data-testid="button-show-results"
                   >
                     {isSubmitting ? (
@@ -454,6 +457,7 @@ export default function PortugueseTestModal({ open, onClose, onComplete }) {
                   <button
                     onClick={handleClose}
                     className="flex-1 px-4 py-2 border-2 border-[#E3E5E8] rounded-xl font-medium text-[#012169] hover:bg-[#F5F6F7] transition-colors duration-200"
+                    id="btn-test-close"
                     data-testid="button-close-results"
                   >
                     Close
@@ -465,6 +469,7 @@ export default function PortugueseTestModal({ open, onClose, onComplete }) {
                       window.open(url, "_blank", "noopener,noreferrer");
                     }}
                     className="flex-1 px-4 py-2 bg-[#C8102E] text-white rounded-xl font-medium hover:bg-[#A80D24] transition-colors duration-200"
+                    id="btn-enroll-from-test"
                     data-testid="button-enroll-from-test"
                   >
                     Enroll Now

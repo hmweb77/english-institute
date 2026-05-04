@@ -130,6 +130,7 @@ export default function LisbonProject() {
                   >
                     <motion.button
                       className="group relative px-10 py-5 bg-linear-to-r from-teal-500 to-teal-600 text-white rounded-full font-semibold text-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                      id="btn-donate-lisbon"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
