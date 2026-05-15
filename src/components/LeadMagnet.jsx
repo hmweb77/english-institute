@@ -89,6 +89,7 @@ export default function LeadMagnetSection({ onSubmit }) {
 
   return (
     <section
+      id="free-resources"
       className="relative py-24 md:py-32 px-6 bg-linear-to-br from-[#C8102E] via-[#A80D24] to-[#9B0E24] text-white overflow-hidden"
       data-testid="section-lead-magnet"
     >
