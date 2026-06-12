@@ -30,7 +30,7 @@ export default function FreeTrialSection() {
       description: "Perfect for early birds & different time zones",
       icon: "🌅",
       gradient: "from-orange-400 to-amber-500",
-      link: "https://luma.com/jxy53zst", // Replace with actual link
+      link: "https://luma.com/ifli-languages", // Replace with actual link
     },
     {
       level: "A1",
@@ -40,7 +40,7 @@ export default function FreeTrialSection() {
       icon: "🌆",
       gradient: "from-blue-400 to-cyan-500",
       popular: true,
-      link: "https://luma.com/137xs42s", // Replace with actual link
+      link: "https://luma.com/ifli-languages", // Replace with actual link
     },
     {
       level: "A2",
@@ -49,7 +49,7 @@ export default function FreeTrialSection() {
       description: "For those with some Portuguese basics",
       icon: "🌙",
       gradient: "from-purple-400 to-pink-500",
-      link: "https://luma.com/0go5gknl", // Replace with actual link
+      link: "https://luma.com/ifli-languages", // Replace with actual link
     },
   ];
 
