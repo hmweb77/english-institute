@@ -10,7 +10,7 @@ const fadeInUp = {
   transition: { duration: 0.6, ease: "easeOut" },
 };
 
-const CALENDAR_URL = "https://luma.com/calendar/manage/cal-ALD4ESReEtrOYZN/events";
+const CALENDAR_URL = "https://luma.com/ifli-languages";
 
 export default function UpcomingEventsSection() {
   return (
