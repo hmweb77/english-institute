@@ -24,7 +24,7 @@ export default function FAQSection() {
   const faqs = [
     {
       question: "E se não puder participar em todas as sessões ao vivo?",
-      answer: "Sem problema! Todas as sessões ao vivo são gravadas e ficam disponíveis por pelo menos 1 ano. Podes vê-las quando quiseres, ao teu ritmo. Recomendamos participar ao vivo sempre que possível para a experiência interativa, mas as gravações garantem que nunca perdes conteúdo.",
+      answer: "Sem problema! Todas as sessões ao vivo são gravadas e ficam disponíveis por pelo menos 1 ano. Pode vê-las quando quiser, ao seu ritmo. Recomendamos participar ao vivo sempre que possível para a experiência interativa, mas as gravações garantem que nunca perde conteúdo.",
     },
     {
       question: "Sou principiante absoluto. Este curso é para mim?",
@@ -36,15 +36,15 @@ export default function FAQSection() {
     },
     {
       question: "Quanto tempo devo dedicar por semana?",
-      answer: "Basta comprometeres-te a fazer algo em inglês cerca de 1 hora por dia. Pode ser participar numa sessão ao vivo, rever uma gravação, ouvir música em inglês, ver TV, falar com falantes nativos ou qualquer atividade que envolva escuta ou prática.",
+      answer: "Basta comprometer-se a fazer algo em inglês cerca de 1 hora por dia. Pode ser participar numa sessão ao vivo, rever uma gravação, ouvir música em inglês, ver TV, falar com falantes nativos ou qualquer atividade que envolva escuta ou prática.",
     },
     {
       question: "Ficarei realmente conversacional em 10 semanas?",
-      answer: "Sim! Ficarás conversacional no teu nível. O nosso método comprovado ajuda-te a ganhar confiança na comunicação com o que já sabes, em 10 semanas, se praticares todos os dias.",
+      answer: "Sim! Ficará conversacional no seu nível. O nosso método comprovado ajuda-lhe a ganhar confiança na comunicação com o que já sabe, em 10 semanas, se praticar todos os dias.",
     },
     {
       question: "Posso ficar com os materiais após o curso?",
-      answer: "Sim. Tens acesso a todos os materiais, gravações e recursos por pelo menos 1 ano após o fim do curso.",
+      answer: "Sim. Tem acesso a todos os materiais, gravações e recursos por pelo menos 1 ano após o fim do curso.",
     },
     {
       question: "Qual é a diferença entre os planos?",
@@ -56,7 +56,7 @@ export default function FAQSection() {
     },
     {
       question: "Posso mudar de plano mais tarde?",
-      answer: "Sim, podes fazer upgrade a qualquer momento. Não é possível fazer downgrade.",
+      answer: "Sim, pode fazer upgrade a qualquer momento. Não é possível fazer downgrade.",
     }
   ];
 
@@ -91,7 +91,7 @@ export default function FAQSection() {
             Perguntas Frequentes
           </h2>
           <p className="text-xl text-[#2D4B8E] leading-relaxed">
-          Tudo o que precisas de saber sobre as Experiências de Imersão da IFLI.
+          Tudo o que precisa de saber sobre as Experiências de Imersão da IFLI.
           </p>
         </motion.div>
 

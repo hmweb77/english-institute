@@ -134,7 +134,7 @@ export default function Navbar({ onEnrollClick }) {
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
               />
-              <span className="relative z-10">Inscreve-te Agora</span>
+              <span className="relative z-10">Inscreva-se Agora</span>
             </motion.button>
           </div>
 
@@ -231,7 +231,7 @@ export default function Navbar({ onEnrollClick }) {
                 transition={{ delay: 0.35 }}
                 whileTap={{ scale: 0.98 }}
               >
-                Inscreve-te Agora
+                Inscreva-se Agora
               </motion.button>
             </motion.div>
           )}

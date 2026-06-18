@@ -140,10 +140,10 @@ export default function TestimonialsSection() {
           
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-[#012169]" data-testid="text-testimonials-headline">
-          Junta-te a alunos de todo o mundo.
+          Junte-se a alunos de todo o mundo.
           </h2>
           <p className="text-xl text-[#2D4B8E] max-w-2xl mx-auto leading-relaxed">
-          Histórias reais de pessoas que se tornaram falantes confiantes de inglês em apenas 10 semanas. Torna-te a nossa próxima história de sucesso.
+          Histórias reais de pessoas que se tornaram falantes confiantes de inglês em apenas 10 semanas. Torne-se a nossa próxima história de sucesso.
           </p>
         </motion.div>
 
@@ -299,7 +299,7 @@ export default function TestimonialsSection() {
           transition={{ delay: 0.4 }}
         >
           <p className="text-lg text-[#2D4B8E] mb-4">
-             Torna-te a nossa próxima história de sucesso
+             Torne-se a nossa próxima história de sucesso
           </p>
          
         </motion.div>

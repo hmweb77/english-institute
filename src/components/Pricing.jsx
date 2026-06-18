@@ -66,7 +66,7 @@ export default function PricingSection({ onSelectPlan }) {
         { name: "Comunidade exclusiva no WhatsApp", included: true },
         { name: "Acesso a apoio individual adicional (1-a-1)", included: false },
       ],
-      cta: "Inscreve-te Hoje",
+      cta: "Inscreva-se Hoje",
       featured: true,
       badge: "O mais Popular",
       gradient: "from-orange-400 to-red-500",
@@ -85,7 +85,7 @@ export default function PricingSection({ onSelectPlan }) {
         { name: "Comunidade exclusiva no WhatsApp", included: true },
         { name: "Acesso a apoio individual adicional (1-a-1)", included: true },
       ],
-      cta: "Escolhe Premium",
+      cta: "Escolha Premium",
       featured: false,
       seatsLeft: 8,
       gradient: "from-purple-500 to-pink-500",
@@ -130,7 +130,7 @@ export default function PricingSection({ onSelectPlan }) {
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-semibold">
-              Lugares Limitados - Inscreve-te até 12 de julho de 2026
+              Lugares Limitados - Inscreva-se até 12 de julho de 2026
             </span>
           </motion.div>
 
@@ -138,7 +138,7 @@ export default function PricingSection({ onSelectPlan }) {
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-white"
             data-testid="text-pricing-headline"
           >
-            Escolhe o Teu Plano de Aprendizagem
+            Escolha o Seu Plano de Aprendizagem
           </h2>
           <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
             Todos os planos incluem 1 ano de acesso aos materiais e acesso vitalício à nossa comunidade de alunos.
@@ -317,7 +317,7 @@ export default function PricingSection({ onSelectPlan }) {
               Opções de Pagamento Disponíveis
             </p>
             <p className="text-white/80 text-sm">
-              Aceitamos cartões de crédito, MB WAY (Portugal), Bizum (Espanha) e Revolut, para tua comodidade. Escolhe o método de pagamento que preferires no momento do checkout.
+              Aceitamos cartões de crédito, MB WAY (Portugal), Bizum (Espanha) e Revolut, para sua comodidade. Escolha o método de pagamento que preferir no momento do checkout.
             </p>
           </div>
         </motion.div>
@@ -331,7 +331,7 @@ export default function PricingSection({ onSelectPlan }) {
           transition={{ delay: 0.6 }}
         >
           <p className="text-white/80 text-sm">
-            🔒 Pagamento seguro • 💯 Garantia de Reembolso em 5 dias • 🌟 Junta-te a uma comunidade de +200 alunos felizes
+            🔒 Pagamento seguro • 💯 Garantia de Reembolso em 5 dias • 🌟 Junte-se a uma comunidade de +200 alunos felizes
           </p>
         </motion.div>
       </div>

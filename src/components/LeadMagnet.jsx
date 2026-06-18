@@ -33,7 +33,7 @@ export default function LeadMagnetSection({ onSubmit }) {
     e.preventDefault();
 
     if (!name || !email || !whatsapp) {
-      alert('Por favor preenche todos os campos');
+      alert('Por favor preencha todos os campos');
       return;
     }
 
@@ -76,13 +76,13 @@ export default function LeadMagnetSection({ onSubmit }) {
 
     } catch (error) {
       console.error('❌ Lead magnet submission error:', error);
-      alert('Algo correu mal. Tenta novamente ou contacta-nos diretamente.');
+      alert('Algo correu mal. Tente novamente ou contacte-nos diretamente.');
       setIsSubmitting(false);
     }
   };
 
   const benefits = [
-    { icon: FileText, text: "Junta-te a uma Google Classroom de exemplo da IFLI" },
+    { icon: FileText, text: "Junte-se a uma Google Classroom de exemplo da IFLI" },
     { icon: Sparkles, text: "Gravação de 1h de uma sessão de demonstração" },
     { icon: CheckCircle, text: "Uma amostra da nossa biblioteca digital" },
   ];
@@ -185,11 +185,11 @@ export default function LeadMagnetSection({ onSubmit }) {
                   className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-[#012169]"
                   data-testid="text-lead-magnet-headline"
                 >
-                  Obtém ACESSO INSTANTÂNEO a RECURSOS GRATUITOS
+                  Obtenha ACESSO INSTANTÂNEO a RECURSOS GRATUITOS
                 </h2>
 
                 <p className="text-lg text-[#2D4B8E] mb-6 leading-relaxed">
-                  Vê como a IFLI te ajuda a falar inglês com confiança — sem compromisso, só valor.
+                  Veja como a IFLI lhe ajuda a falar inglês com confiança — sem compromisso, só valor.
                 </p>
 
                 {/* Benefits List */}
@@ -228,7 +228,7 @@ export default function LeadMagnetSection({ onSubmit }) {
                         <User className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#2D4B8E]" />
                         <motion.input
                           type="text"
-                          placeholder="Escreve o teu nome"
+                          placeholder="Escreva o seu nome"
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           required
@@ -243,7 +243,7 @@ export default function LeadMagnetSection({ onSubmit }) {
                         <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#2D4B8E]" />
                         <motion.input
                           type="email"
-                          placeholder="Escreve o teu email"
+                          placeholder="Escreva o seu email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
@@ -259,7 +259,7 @@ export default function LeadMagnetSection({ onSubmit }) {
                         <Phone className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#2D4B8E]" />
                         <motion.input
                           type="tel"
-                          placeholder="Escreve o teu número de WhatsApp"
+                          placeholder="Escreva o seu número de WhatsApp"
                           value={whatsapp}
                           onChange={(e) => setWhatsapp(e.target.value)}
                           required
@@ -296,7 +296,7 @@ export default function LeadMagnetSection({ onSubmit }) {
                             </>
                           ) : (
                             <>
-                              Entra na tua Google Classroom de exemplo da IFLI
+                              Entre na sua Google Classroom de exemplo da IFLI
                             </>
                           )}
                         </span>
@@ -331,7 +331,7 @@ export default function LeadMagnetSection({ onSubmit }) {
                   transition={{ delay: 0.5 }}
                 >
                   <Lock className="w-4 h-4" />
-                  <span>Respeitamos a tua privacidade. Podes cancelar a subscrição a qualquer momento.</span>
+                  <span>Respeitamos a sua privacidade. Pode cancelar a subscrição a qualquer momento.</span>
                 </motion.div>
               </div>
 

@@ -39,7 +39,7 @@ export default function BenefitsSection() {
     {
       icon: Zap,
       title: "Progresso Rápido",
-      description: "O nosso método intensivo de imersão ajuda-te a comunicar em inglês em apenas 10 semanas. A maioria dos alunos sente-se confiante em conversas básicas já na 5.ª semana.",
+      description: "O nosso método intensivo de imersão ajuda-lhe a comunicar em inglês em apenas 10 semanas. A maioria dos alunos sente-se confiante em conversas básicas já na 5.ª semana.",
       gradient: "from-yellow-400 via-orange-400 to-red-500",
       bgGradient: "from-yellow-50 to-orange-50",
       accentColor: "#F59E0B"
@@ -47,7 +47,7 @@ export default function BenefitsSection() {
     {
       icon: Users2,
       title: "Aprendizagem em Pequenos Grupos",
-      description: "Máximo de 12 participantes por sessão. Isso significa mais tempo para falar, atenção personalizada e uma evolução mais rápida das tuas competências.",
+      description: "Máximo de 12 participantes por sessão. Isso significa mais tempo para falar, atenção personalizada e uma evolução mais rápida das suas competências.",
       gradient: "from-blue-400 via-cyan-400 to-teal-500",
       bgGradient: "from-blue-50 to-cyan-50",
       accentColor: "#3B82F6"
@@ -55,7 +55,7 @@ export default function BenefitsSection() {
     {
       icon: Globe2,
       title: "Inglês para a Vida Real",
-      description: "Aprende inglês prático e moderno, usado em situações do dia a dia. Nada de frases de manual - desenvolve competências reais de conversação.",
+      description: "Aprenda inglês prático e moderno, usado em situações do dia a dia. Nada de frases de manual - desenvolva competências reais de conversação.",
       gradient: "from-green-400 via-emerald-400 to-teal-500",
       bgGradient: "from-green-50 to-emerald-50",
       accentColor: "#10B981"
@@ -63,7 +63,7 @@ export default function BenefitsSection() {
     {
       icon: Clock,
       title: "Acesso Flexível",
-      description: "Não podes participar numa sessão ao vivo? Sem problema! Fica tudo gravado. Estuda ao teu ritmo com 1 ano de acesso a todos os materiais.",
+      description: "Não pode participar numa sessão ao vivo? Sem problema! Fica tudo gravado. Estude ao seu ritmo com 1 ano de acesso a todos os materiais.",
       gradient: "from-purple-400 via-pink-400 to-rose-500",
       bgGradient: "from-purple-50 to-pink-50",
       accentColor: "#A855F7"
@@ -163,7 +163,7 @@ export default function BenefitsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Tudo o que precisas para passar de principiante a falante confiante de inglês.
+            Tudo o que precisa para passar de principiante a falante confiante de inglês.
           </motion.p>
         </motion.div>
 
@@ -268,7 +268,7 @@ export default function BenefitsSection() {
             animate={isInView ? { opacity: [0.9, 1, 0.9] } : {}}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            Tudo pronto para começar? Lugares Limitados - Inscreve-te até 12 de julho de 2026.
+            Tudo pronto para começar? Lugares Limitados - Inscreva-se até 12 de julho de 2026.
           </motion.p>
          
         </motion.div>

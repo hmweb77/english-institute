@@ -152,7 +152,7 @@ export default function AboutProgram() {
   >
     <p className="text-lg leading-relaxed text-[#012169]">
       A Experiência de Imersão da IFLI é <span className="font-semibold text-[#C8102E]">muito mais do que simples aulas de língua</span>.
-      É um ecossistema completo de aprendizagem, pensado para te ajudar a falar inglês com confiança.
+      É um ecossistema completo de aprendizagem, pensado para o ajudar a falar inglês com confiança.
     </p>
   </motion.div>
 
@@ -164,8 +164,8 @@ export default function AboutProgram() {
     transition={{ duration: 0.6, delay: 0.2 }}
   >
     <p className="text-lg leading-relaxed text-[#012169]">
-      Aprende com <span className="font-semibold text-[#C8102E]">facilitadores qualificados</span>, em <span className="font-semibold text-[#C8102E]">sessões online ao vivo e interativas</span> de 1 hora por dia, de segunda a sexta-feira.
-      Todas as sessões são gravadas, para que possas rever sempre que quiseres. Além disso, tens acesso à nossa vasta <span className="font-semibold text-[#C8102E]">biblioteca digital de inglês</span>.
+      Aprenda com <span className="font-semibold text-[#C8102E]">facilitadores qualificados</span>, em <span className="font-semibold text-[#C8102E]">sessões online ao vivo e interativas</span> de 1 hora por dia, de segunda a sexta-feira.
+      Todas as sessões são gravadas, para que possa rever sempre que quiser. Além disso, tem acesso à nossa vasta <span className="font-semibold text-[#C8102E]">biblioteca digital de inglês</span>.
     </p>
   </motion.div>
 
@@ -180,7 +180,7 @@ export default function AboutProgram() {
     {[
       { icon: "✓", text: "Facilitadores qualificados e experientes (nativos ou com nível C2 de inglês)" },
       { icon: "✓", text: "Sessões online ao vivo e interativas" },
-      { icon: "✓", text: "Gravações disponíveis (revê quando quiseres)" },
+      { icon: "✓", text: "Gravações disponíveis (reveja quando quiser)" },
       { icon: "✓", text: "Experiência de imersão a partir de qualquer lugar" }
     ].map((item, index) => (
       <motion.div

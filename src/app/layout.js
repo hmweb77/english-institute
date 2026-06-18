@@ -22,12 +22,12 @@ export const metadata = {
 
   title: {
     default:
-      "IFLI English Immersion 2026 - Domina o Inglês em 10 Semanas",
+      "IFLI English Immersion 2026 - Domine o Inglês em 10 Semanas",
     template: "%s | IFLI English Immersion",
   },
 
   description:
-    "Domina o inglês em apenas 10 semanas com o programa intensivo de imersão da IFLI. Aulas ao vivo online com professores qualificados, turmas pequenas (máx. 12), e resultados reais. Inscrições abertas para abril de 2026.",
+    "Domine o inglês em apenas 10 semanas com o programa intensivo de imersão da IFLI. Aulas ao vivo online com professores qualificados, turmas pequenas (máx. 12), e resultados reais. Inscrições abertas para abril de 2026.",
 
   keywords: [
     "aprender inglês",
@@ -67,9 +67,9 @@ export const metadata = {
     url: "https://iflimmersion.com/ifli-english-language-immersion",
     siteName: "IFLI English Immersion",
     title:
-      "IFLI English Immersion 2026 - Domina o Inglês em 10 Semanas",
+      "IFLI English Immersion 2026 - Domine o Inglês em 10 Semanas",
     description:
-      "Torna-te um falante confiante de inglês em 10 semanas. Aulas ao vivo, professores qualificados, turmas pequenas. Inscrições abertas para abril de 2026.",
+      "Torne-se um falante confiante de inglês em 10 semanas. Aulas ao vivo, professores qualificados, turmas pequenas. Inscrições abertas para abril de 2026.",
     images: [
       {
         url: "https://iflimmersion.com/ifli-portuguese-language-immersion/og-image.jpg",
@@ -82,9 +82,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "IFLI English Immersion 2026 - Domina o Inglês Rapidamente",
+    title: "IFLI English Immersion 2026 - Domine o Inglês Rapidamente",
     description:
-      "Fala inglês com confiança em 10 semanas. Aulas online ao vivo com professores qualificados. Inscreve-te agora para abril de 2026!",
+      "Fale inglês com confiança em 10 semanas. Aulas online ao vivo com professores qualificados. Inscreva-se agora para abril de 2026!",
     images: [
       "https://iflimmersion.com/ifli-english-language-immersion/twitter-image.jpg",
     ],

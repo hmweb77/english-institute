@@ -136,7 +136,7 @@ export default function FinalCTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Torna-te um falante confiante de inglês em apenas 10 semanas.
+          Torne-se um falante confiante de inglês em apenas 10 semanas.
         </motion.p>
 
         {/* Countdown */}
@@ -192,7 +192,7 @@ export default function FinalCTASection() {
           />
           <Lock className="w-5 h-5 relative z-10 group-hover:text-white transition-colors duration-300" />
           <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-            Garante o Teu Lugar Hoje
+            Garanta o Seu Lugar Hoje
           </span>
           <motion.div
             className="relative z-10"

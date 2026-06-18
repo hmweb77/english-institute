@@ -43,7 +43,7 @@ export default function HeroSection({ onEnrollClick, onTestClick }) {
   }, [backgrounds.length]);
 
   // Simplified typewriter effect
-  const headline = "Domina o Inglês em Apenas 10 Semanas";
+  const headline = "Domine o Inglês em Apenas 10 Semanas";
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -167,7 +167,7 @@ export default function HeroSection({ onEnrollClick, onTestClick }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Passa do zero à conversa confiante. Aulas ao vivo. Professores reais. Resultados reais.
+          Passe do zero à conversa confiante. Aulas ao vivo. Professores reais. Resultados reais.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -184,11 +184,11 @@ export default function HeroSection({ onEnrollClick, onTestClick }) {
             id="btn-enroll-hero"
             data-testid="button-enroll-hero"
           >
-            Inscreve-te Agora →
+            Inscreva-se Agora →
           </button>
           <Link id="btn-free-test" className="px-8 md:px-10 py-4 md:py-6 text-base md:text-lg font-semibold text-white rounded-full min-w-[200px] md:min-w-[220px] bg-white/10 hover:bg-white hover:text-[#012169] border-2 border-white transition-colors duration-200 flex items-center justify-center gap-2" href="https://form.jotform.com/222384841866364" target="_blank" >
               <Play className="w-5 h-5" />
-              Faz o Teste Gratuito
+              Faça o Teste Gratuito
           </Link>
         </motion.div>
 

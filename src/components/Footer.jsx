@@ -72,7 +72,7 @@ export default function Footer() {
               />
             </motion.div>
             <p className="text-white/75 mb-6 leading-relaxed">
-            Aprende inglês rapidamente com sessões online ao vivo, facilitadores qualificados e experientes e uma comunidade global.
+            Aprenda inglês rapidamente com sessões online ao vivo, facilitadores qualificados e experientes e uma comunidade global.
             </p>
             
             {/* Social Links */}
@@ -141,7 +141,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="font-bold text-lg mb-6 text-white">Contacta-nos</h4>
+            <h4 className="font-bold text-lg mb-6 text-white">Contacte-nos</h4>
             <ul className="space-y-4">
 
 {/* PHONE */}
