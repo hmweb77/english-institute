@@ -92,9 +92,9 @@ export default function Home() {
     setToasts(prev => prev.filter(toast => toast.id !== id));
   };
 
-  const WHATSAPP_ENROLL_URL = "https://wa.me/351933292112?text=" + encodeURIComponent("Olá! Tenho interesse no programa de Imersão em Inglês e gostaria de garantir o meu lugar.");
+  const ENROLL_URL = "https://iflilanguages.fillout.com/registration";
   const handleEnrollClick = () => {
-    window.open(WHATSAPP_ENROLL_URL, "_blank", "noopener,noreferrer");
+    window.open(ENROLL_URL, "_blank", "noopener,noreferrer");
   };
 
   const handleLeadMagnetSubmit = (data) => {

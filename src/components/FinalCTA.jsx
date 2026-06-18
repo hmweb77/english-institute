@@ -55,9 +55,7 @@ function CountdownBox({ value, label }) {
 const COUNTDOWN_LABELS = { days: "Dias", hours: "Horas", minutes: "Minutos", seconds: "Segundos" };
 
 export default function FinalCTASection() {
-  const whatsappNumber = "351933292112";
-  const whatsappMessage = encodeURIComponent("Olá! Tenho interesse no programa de Imersão em Inglês e gostaria de garantir o meu lugar.");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const enrollUrl = "https://iflilanguages.fillout.com/registration";
 
   const { days, hours, minutes, seconds } = useCountdown(JOURNEY_START);
 
@@ -174,7 +172,7 @@ export default function FinalCTASection() {
         </motion.p>
 
         <motion.a
-          href={whatsappUrl}
+          href={enrollUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center gap-3 px-10 py-5 text-lg font-bold rounded-full bg-white text-[#9B0E24] overflow-hidden shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_60px_-12px_rgba(0,0,0,0.4)] transition-shadow duration-300"
