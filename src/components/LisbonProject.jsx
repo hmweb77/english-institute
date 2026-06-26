@@ -69,7 +69,7 @@ export default function LisbonProject() {
                 <div className="space-y-4 mb-10">
                   <p className="text-base text-[#012169] font-medium">
                     Para saber mais sobre o Lisbon Project e o seu trabalho de impacto,<br />
-                    visita o seu website e segue-os nas redes sociais:
+                    Visite o seu website e Siga-os nas redes sociais:
                   </p>
 
                   {/* Social Links - Centered */}

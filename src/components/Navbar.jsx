@@ -202,21 +202,7 @@ export default function Navbar({ onEnrollClick }) {
                 </motion.button>
               ))}
               
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <Link 
-                  href="/dashboard"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full px-4 py-3 border-2 border-[#E3E5E8] rounded-xl font-medium text-[#012169] hover:bg-[#F5F6F7] transition-colors duration-200 flex items-center justify-center gap-2"
-                  data-testid="button-signin-mobile"
-                >
-                  <LogIn className="h-4 w-4" />
-                  Entrar
-                </Link>
-              </motion.div>
+             
               
               <motion.button 
                 onClick={() => {

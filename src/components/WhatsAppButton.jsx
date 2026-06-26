@@ -3,17 +3,14 @@ import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
+import { WHATSAPP_URL } from "@/lib/whatsapp";
+
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
-  
-  // Replace this with your actual WhatsApp number (include country code without + or spaces)
-  const whatsappNumber = "351933292112"; // Example: 351 for Portugal
-  const whatsappMessage = encodeURIComponent("Olá! Tenho interesse no programa de Imersão em Inglês e gostaria de garantir o meu lugar.");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
     <motion.a
-      href={whatsappUrl}
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       id="btn-whatsapp"

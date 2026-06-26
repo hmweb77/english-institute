@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -157,7 +158,7 @@ export default function Footer() {
   </div>
 
   <Link
-  href="https://wa.me/351933292112"
+  href={WHATSAPP_URL}
   className="text-white/70 text-sm hover:text-[#C8102E] transition"
 >
   +351 933 292 112

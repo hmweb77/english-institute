@@ -4,6 +4,7 @@ import { X, CheckCircle2, ArrowRight, ArrowLeft, Loader2 } from "lucide-react";
 import { db } from "@/lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { createTestResult } from "@/lib/airtable";
+import { WHATSAPP_URL } from "@/lib/whatsapp";
 
 const questions = [
   {
@@ -465,8 +466,7 @@ export default function PortugueseTestModal({ open, onClose, onComplete }) {
                   <button
                     onClick={() => {
                       handleClose();
-                      const url = "https://wa.me/351933292112?text=" + encodeURIComponent("Hi! I'm interested in the Portuguese Immersion program and would like to secure a spot.");
-                      window.open(url, "_blank", "noopener,noreferrer");
+                      window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
                     }}
                     className="flex-1 px-4 py-2 bg-[#C8102E] text-white rounded-xl font-medium hover:bg-[#A80D24] transition-colors duration-200"
                     id="btn-enroll-from-test"
