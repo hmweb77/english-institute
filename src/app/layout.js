@@ -27,7 +27,7 @@ export const metadata = {
   },
 
   description:
-    "Domine o inglês em apenas 10 semanas com o programa intensivo de imersão da IFLI. Aulas ao vivo online com professores qualificados, turmas pequenas (máx. 12), e resultados reais. Inscrições abertas para abril de 2026.",
+    "Domine o inglês em apenas 10 semanas com o programa intensivo de imersão da IFLI. Aulas ao vivo online com professores qualificados, turmas pequenas (máx. 12), e resultados reais. Inscrições abertas para outubro de 2026.",
 
   keywords: [
     "aprender inglês",
@@ -69,7 +69,7 @@ export const metadata = {
     title:
       "IFLI English Immersion 2026 - Domine o Inglês em 10 Semanas",
     description:
-      "Torne-se um falante confiante de inglês em 10 semanas. Aulas ao vivo, professores qualificados, turmas pequenas. Inscrições abertas para abril de 2026.",
+      "Torne-se um falante confiante de inglês em 10 semanas. Aulas ao vivo, professores qualificados, turmas pequenas. Inscrições abertas para outubro de 2026.",
     images: [
       {
         url: "https://iflimmersion.com/ifli-portuguese-language-immersion/og-image.jpg",
@@ -84,7 +84,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "IFLI English Immersion 2026 - Domine o Inglês Rapidamente",
     description:
-      "Fale inglês com confiança em 10 semanas. Aulas online ao vivo com professores qualificados. Inscreva-se agora para abril de 2026!",
+      "Fale inglês com confiança em 10 semanas. Aulas online ao vivo com professores qualificados. Inscreva-se agora para outubro de 2026!",
     images: [
       "https://iflimmersion.com/ifli-english-language-immersion/twitter-image.jpg",
     ],
@@ -149,7 +149,7 @@ const jsonLd = {
       url: "https://iflimmersion.com/ifli-portuguese-language-immersion",
       name: "IFLI Portuguese Immersion 2026",
       description:
-        "Intensive 10-week European Portuguese immersion program starting January 2026",
+        "Intensive 10-week English immersion program starting October 2026",
       isPartOf: {
         "@id": "https://iflimmersion.com/",
       },
@@ -192,8 +192,8 @@ const jsonLd = {
       hasCourseInstance: {
         "@type": "CourseInstance",
         courseMode: "online",
-        startDate: "2026-01-19",
-        endDate: "2026-03-27",
+        startDate: "2026-10-05",
+        endDate: "2026-12-11",
         courseWorkload: "PT1H",
         instructor: {
           "@type": "Person",
@@ -211,7 +211,7 @@ const jsonLd = {
           availability: "https://schema.org/InStock",
           url: "https://iflimmersion.com/ifli-portuguese-language-immersion#pricing",
           validFrom: "2024-11-01",
-          priceValidUntil: "2026-01-10",
+          priceValidUntil: "2026-10-04",
         },
         {
           "@type": "Offer",
@@ -221,7 +221,7 @@ const jsonLd = {
           availability: "https://schema.org/InStock",
           url: "https://iflimmersion.com/ifli-portuguese-language-immersion#pricing",
           validFrom: "2024-11-01",
-          priceValidUntil: "2026-01-10",
+          priceValidUntil: "2026-10-04",
         },
         {
           "@type": "Offer",
@@ -231,7 +231,7 @@ const jsonLd = {
           availability: "https://schema.org/LimitedAvailability",
           url: "https://iflimmersion.com/ifli-portuguese-language-immersion#pricing",
           validFrom: "2024-11-01",
-          priceValidUntil: "2026-01-10",
+          priceValidUntil: "2026-10-04",
         },
       ],
       aggregateRating: {

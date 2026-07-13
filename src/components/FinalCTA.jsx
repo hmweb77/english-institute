@@ -3,7 +3,7 @@ import { useMemo, useState, useEffect } from "react";
 import { Lock, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const JOURNEY_START = new Date("2026-07-13T00:00:00");
+const JOURNEY_START = new Date("2026-10-05T00:00:00");
 
 function useCountdown(targetDate) {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
@@ -124,7 +124,7 @@ export default function FinalCTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          As Aulas Começam a 13 de Julho de 2026
+          As Aulas Começam a 5 de Outubro de 2026
         </motion.h2>
 
         <motion.p
@@ -158,7 +158,7 @@ export default function FinalCTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Prazo: 12 de julho de 2026. Lugares limitados disponíveis.
+          Prazo: 4 de outubro de 2026. Lugares limitados disponíveis.
         </motion.p>
 
         <motion.p
