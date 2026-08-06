@@ -202,8 +202,16 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-sm text-white/60">
               <p>© 2026 IFLI. Todos os direitos reservados.</p>
               <span className="hidden md:inline">•</span>
-              <p className="flex items-center gap-1">
-                Feito com <Heart className="w-4 h-4 text-[#C8102E] fill-current" /> em Portugal por <Link href="https://www.hmwebs.com/" target="blank" className="text-white/80 hover:text-[#C8102E] transition-colors font-medium">Oussama</Link>
+              <p className="flex items-center gap-1 flex-wrap justify-center md:justify-start">
+                Feito com <Heart className="w-4 h-4 text-[#C8102E] fill-current" /> por{" "}
+                <Link
+                  href="https://www.nextdigits.ma/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-[#C8102E] transition-colors font-medium"
+                >
+                  Next Digits
+                </Link>
               </p>
             </div>
             
