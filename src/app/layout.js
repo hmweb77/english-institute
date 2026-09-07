@@ -192,8 +192,8 @@ const jsonLd = {
       hasCourseInstance: {
         "@type": "CourseInstance",
         courseMode: "online",
-        startDate: "2026-10-05",
-        endDate: "2026-12-11",
+        startDate: "2026-10-12",
+        endDate: "2026-12-18",
         courseWorkload: "PT1H",
         instructor: {
           "@type": "Person",
@@ -211,7 +211,7 @@ const jsonLd = {
           availability: "https://schema.org/InStock",
           url: "https://iflimmersion.com/ifli-portuguese-language-immersion#pricing",
           validFrom: "2024-11-01",
-          priceValidUntil: "2026-10-04",
+          priceValidUntil: "2026-10-11",
         },
         {
           "@type": "Offer",
@@ -221,7 +221,7 @@ const jsonLd = {
           availability: "https://schema.org/InStock",
           url: "https://iflimmersion.com/ifli-portuguese-language-immersion#pricing",
           validFrom: "2024-11-01",
-          priceValidUntil: "2026-10-04",
+          priceValidUntil: "2026-10-11",
         },
         {
           "@type": "Offer",
@@ -231,7 +231,7 @@ const jsonLd = {
           availability: "https://schema.org/LimitedAvailability",
           url: "https://iflimmersion.com/ifli-portuguese-language-immersion#pricing",
           validFrom: "2024-11-01",
-          priceValidUntil: "2026-10-04",
+          priceValidUntil: "2026-10-11",
         },
       ],
       aggregateRating: {

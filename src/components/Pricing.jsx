@@ -130,7 +130,7 @@ export default function PricingSection({ onSelectPlan }) {
           >
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-semibold">
-              Lugares Limitados - Inscreva-se até 4 de outubro de 2026
+              Lugares Limitados - Inscreva-se até 11 de outubro de 2026
             </span>
           </motion.div>
 
