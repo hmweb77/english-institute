@@ -1,371 +1,46 @@
 "use client";
-import { useState, useMemo } from "react";
-import { Download, CheckCircle, Mail, FileText, Sparkles, Lock, User, Phone } from "lucide-react";
-import pdfImage from "../../public/freeS.png";
-import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" }
-};
+import { useState } from "react";
+import { BookOpenCheck, LockKeyhole, PlayCircle } from "lucide-react";
+import { SAMPLE_CLASSROOM_URL } from "@/lib/site";
 
 export default function LeadMagnetSection({ onSubmit }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
-
-  const particlePositions = useMemo(() => {
-    return Array.from({ length: 10 }, (_, i) => ({
-      left: `${(i * 13.7 + 23) % 100}%`,
-      top: `${(i * 17.3 + 15) % 100}%`,
-      duration: 3 + (i % 3),
-      delay: (i % 5) * 0.4
-    }));
-  }, []);
-
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!name || !email || !whatsapp) {
-      alert('Por favor preencha todos os campos');
-      return;
-    }
-
-    setIsSubmitting(true);
-
+  const [form, setForm] = useState({ name: "", email: "", whatsapp: "" });
+  const [status, setStatus] = useState("idle");
+  const update = (event) => setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+  const submit = async (event) => {
+    event.preventDefault();
+    setStatus("loading");
     try {
-      // Call API to save lead to Airtable and send email
-      const response = await fetch('/api/send-lead-magnet', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          name, 
-          email, 
-          whatsapp 
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit');
-      }
-
-      console.log('✅ Lead captured successfully:', data);
-
-      // Call parent callback if provided
-      if (onSubmit) {
-        await onSubmit({ name, email, whatsapp });
-      }
-
-      setShowSuccess(true);
-
-      // Redirect to Google Classroom after a short delay so user sees success
-      const classroomUrl = "https://classroom.google.com/c/ODQ3MDQyNzg1MzMw?cjc=3jlexck4";
-      setTimeout(() => {
-        window.location.href = classroomUrl;
-      }, 1500);
-
-    } catch (error) {
-      console.error('❌ Lead magnet submission error:', error);
-      alert('Algo correu mal. Tente novamente ou contacte-nos diretamente.');
-      setIsSubmitting(false);
+      const response = await fetch("/api/send-lead-magnet", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(form) });
+      if (!response.ok) throw new Error("Request failed");
+      await onSubmit?.(form);
+      setStatus("success");
+      window.setTimeout(() => { window.location.href = SAMPLE_CLASSROOM_URL; }, 900);
+    } catch {
+      setStatus("error");
     }
   };
-
-  const benefits = [
-    { icon: FileText, text: "Junte-se a uma Google Classroom de exemplo da IFLI" },
-    { icon: Sparkles, text: "Gravação de 1h de uma sessão de demonstração" },
-    { icon: CheckCircle, text: "Uma amostra da nossa biblioteca digital" },
-  ];
-
   return (
-    <section
-      id="free-resources"
-      className="relative py-24 md:py-32 px-6 bg-linear-to-br from-[#C8102E] via-[#A80D24] to-[#9B0E24] text-white overflow-hidden"
-      data-testid="section-lead-magnet"
-    >
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-20 right-10 w-64 h-64 bg-white/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 30, 0],
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-[#C8102E]/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            x: [0, -40, 0],
-          }}
-          transition={{ duration: 10, repeat: Infinity }}
-        />
-
-
-      {/* Floating Particles - FIXED VERSION */}
-<div className="absolute inset-0 overflow-hidden pointer-events-none">
-  {particlePositions.map((particle, i) => (
-    <motion.div
-      key={i}
-      className="absolute w-2 h-2 bg-white/20 rounded-full"
-      style={{
-        left: particle.left,
-        top: particle.top,
-      }}
-      animate={{
-        y: [0, -20, 0],
-        opacity: [0.2, 0.5, 0.2],
-      }}
-      transition={{
-        duration: particle.duration,
-        repeat: Infinity,
-        delay: particle.delay,
-      }}
-    />
-  ))}
-</div>
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div {...fadeInUp}>
-          <div className="relative p-10 md:p-16 shadow-[0px_30px_50px_-12px_rgba(0,0,0,0.20),0px_15px_30px_-12px_rgba(0,0,0,0.12)] bg-white rounded-3xl overflow-hidden">
-            {/* Success confetti animation */}
-            <AnimatePresence>
-              {showSuccess && (
-                <>
-                  {[...Array(20)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-3 h-3 rounded-full"
-                      style={{
-                        left: "50%",
-                        top: "50%",
-                        background: ["#C8102E", "#C8102E", "#012169", "#FFD700"][i % 4],
-                      }}
-                      initial={{ scale: 0, x: 0, y: 0 }}
-                      animate={{
-                        scale: [0, 1, 0],
-                        x: Math.cos((i / 20) * Math.PI * 2) * 200,
-                        y: Math.sin((i / 20) * Math.PI * 2) * 200,
-                      }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                    />
-                  ))}
-                </>
-              )}
-            </AnimatePresence>
-
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
-              <div className="order-2 md:order-1">
-                <motion.div
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#C8102E]/10 text-[#C8102E] rounded-full mb-6"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Sparkles className="w-4 h-4" />
-                  <span className="text-sm font-semibold">Recursos gratuitos</span>
-                </motion.div>
-
-                <h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 tracking-tight text-[#012169]"
-                  data-testid="text-lead-magnet-headline"
-                >
-                  Obtenha ACESSO INSTANTÂNEO a RECURSOS GRATUITOS
-                </h2>
-
-                <p className="text-lg text-[#2D4B8E] mb-6 leading-relaxed">
-                  Veja como a IFLI lhe ajuda a falar inglês com confiança — sem compromisso, só valor.
-                </p>
-
-                {/* Benefits List */}
-                <div className="space-y-3 mb-8">
-                  {benefits.map((benefit, index) => {
-                    const IconComponent = benefit.icon;
-                    return (
-                      <motion.div
-                        key={index}
-                        className="flex items-center gap-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + index * 0.1 }}
-                      >
-                        <div className="w-8 h-8 rounded-full bg-[#C8102E]/10 flex items-center justify-center shrink-0">
-                          <IconComponent className="w-4 h-4 text-[#C8102E]" />
-                        </div>
-                        <span className="text-[#012169]">{benefit.text}</span>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-
-                {/* Form */}
-                <AnimatePresence mode="wait">
-                  {!showSuccess ? (
-                    <motion.form
-                      onSubmit={handleSubmit}
-                      className="space-y-4"
-                      initial={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                    >
-                      {/* Name */}
-                      <div className="relative">
-                        <User className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#2D4B8E]" />
-                        <motion.input
-                          type="text"
-                          placeholder="Escreva o seu nome"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          required
-                          disabled={isSubmitting}
-                          className="w-full h-14 text-base pl-14 pr-6 rounded-2xl border-2 border-[#E3E5E8] focus:outline-none focus:ring-2 focus:ring-[#C8102E] focus:border-transparent text-[#012169] transition-all disabled:bg-gray-50 disabled:cursor-not-allowed"
-                          whileFocus={{ scale: 1.02 }}
-                        />
-                      </div>
-
-                      {/* Email */}
-                      <div className="relative">
-                        <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#2D4B8E]" />
-                        <motion.input
-                          type="email"
-                          placeholder="Escreva o seu email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                          disabled={isSubmitting}
-                          className="w-full h-14 text-base pl-14 pr-6 rounded-2xl border-2 border-[#E3E5E8] focus:outline-none focus:ring-2 focus:ring-[#C8102E] focus:border-transparent text-[#012169] transition-all disabled:bg-gray-50 disabled:cursor-not-allowed"
-                          data-testid="input-email-lead"
-                          whileFocus={{ scale: 1.02 }}
-                        />
-                      </div>
-
-                      {/* WhatsApp */}
-                      <div className="relative">
-                        <Phone className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#2D4B8E]" />
-                        <motion.input
-                          type="tel"
-                          placeholder="Escreva o seu número de WhatsApp"
-                          value={whatsapp}
-                          onChange={(e) => setWhatsapp(e.target.value)}
-                          required
-                          disabled={isSubmitting}
-                          className="w-full h-14 text-base pl-14 pr-6 rounded-2xl border-2 border-[#E3E5E8] focus:outline-none focus:ring-2 focus:ring-[#C8102E] focus:border-transparent text-[#012169] transition-all disabled:bg-gray-50 disabled:cursor-not-allowed"
-                          whileFocus={{ scale: 1.02 }}
-                        />
-                      </div>
-
-                      <motion.button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="group relative w-full rounded-full py-6 text-base font-semibold bg-linear-to-r from-[#C8102E] to-[#A80D24] text-white overflow-hidden shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-                        id="btn-lead-magnet-submit"
-                        data-testid="button-download-guide"
-                        whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                        whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                      >
-                        <motion.div
-                          className="absolute inset-0 bg-linear-to-r from-[#A80D24] to-[#8B0A1E]"
-                          initial={{ x: "-100%" }}
-                          whileHover={{ x: 0 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                        <span className="relative z-10 flex items-center justify-center gap-2">
-                          {isSubmitting ? (
-                            <>
-                              <motion.div
-                                className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                              />
-                              A processar...
-                            </>
-                          ) : (
-                            <>
-                              Entre na sua Google Classroom de exemplo da IFLI
-                            </>
-                          )}
-                        </span>
-                      </motion.button>
-                    </motion.form>
-                  ) : (
-                    <motion.div
-                      className="p-6 bg-green-50 border-2 border-green-200 rounded-2xl"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
-                          <CheckCircle className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="font-bold text-green-900">Obrigado!</h3>
-                          
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {/* Privacy Note */}
-                <motion.div
-                  className="flex items-center gap-2 mt-6 text-sm text-[#2D4B8E]"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                >
-                  <Lock className="w-4 h-4" />
-                  <span>Respeitamos a sua privacidade. Pode cancelar a subscrição a qualquer momento.</span>
-                </motion.div>
-              </div>
-
-              {/* Right - PDF Mockup */}
-              <div className="order-1 md:order-2">
-                <motion.div
-                  className="relative"
-                  initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
-                  whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05, rotate: 2 }}
-                >
-                  {/* Glow effect */}
-                  <motion.div
-                    className="absolute -inset-4 bg-linear-to-r from-[#C8102E] to-[#C8102E] rounded-3xl opacity-20 blur-2xl"
-                    animate={{
-                      scale: [1, 1.1, 1],
-                      opacity: [0.2, 0.3, 0.2],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  />
-
-                  <Image
-                    src={pdfImage}
-                    alt="IFLI Free Sample Account Preview"
-                    className="relative z-10 w-full max-w-sm mx-auto drop-shadow-2xl rounded-2xl"
-                    data-testid="img-guide"
-                  />
-                </motion.div>
-              </div>
-            </div>
+    <section id="free-resources" className="bg-surface px-5 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto grid max-w-6xl overflow-hidden rounded-[2rem] border border-line bg-white lg:grid-cols-[1fr_.85fr]">
+        <div className="bg-brand-blue p-7 text-white sm:p-10 lg:p-14">
+          <p className="font-bold text-brand-red">Free plan</p>
+          <h2 className="mt-3 text-4xl font-extrabold tracking-[-0.04em]">See how IFLI learning feels.</h2>
+          <p className="mt-5 leading-7 text-white/80">Get instant access to a sample Google Classroom before you choose a paid plan.</p>
+          <ul className="mt-8 space-y-5">{[[PlayCircle, "A one-hour sample class recording"], [BookOpenCheck, "A taste of the digital library"], [LockKeyhole, "No payment and no commitment"]].map(([Icon, text]) => <li key={text} className="flex items-center gap-3"><Icon className="size-6 text-brand-red" aria-hidden="true" /><span className="font-semibold">{text}</span></li>)}</ul>
+        </div>
+        <form onSubmit={submit} className="p-7 sm:p-10 lg:p-14" aria-label="Get free IFLI resources">
+          <h3 className="text-2xl font-extrabold text-brand-blue-dark">Open your sample classroom</h3>
+          <p className="mt-2 text-sm text-brand-blue-muted">We will use these details to send your access information.</p>
+          <div className="mt-7 space-y-5">
+            <label className="block text-sm font-bold text-brand-blue-dark">Name<input name="name" value={form.name} onChange={update} required autoComplete="name" className="mt-2 min-h-12 w-full rounded-lg border border-line px-4 font-normal focus:border-brand-red focus:outline-none" /></label>
+            <label className="block text-sm font-bold text-brand-blue-dark">Email<input name="email" type="email" value={form.email} onChange={update} required autoComplete="email" className="mt-2 min-h-12 w-full rounded-lg border border-line px-4 font-normal focus:border-brand-red focus:outline-none" /></label>
+            <label className="block text-sm font-bold text-brand-blue-dark">WhatsApp number<input name="whatsapp" type="tel" value={form.whatsapp} onChange={update} required autoComplete="tel" className="mt-2 min-h-12 w-full rounded-lg border border-line px-4 font-normal focus:border-brand-red focus:outline-none" /></label>
           </div>
-        </motion.div>
+          <button disabled={status === "loading" || status === "success"} className="mt-7 min-h-12 w-full rounded-full bg-brand-red px-6 font-bold text-white hover:bg-brand-red-dark disabled:opacity-60">{status === "loading" ? "Opening your classroom…" : status === "success" ? "Access ready" : "Open the sample classroom"}</button>
+          {status === "error" && <p role="alert" className="mt-4 text-sm font-semibold text-brand-red">We could not submit the form. Please try again or contact info@iflimmersion.com.</p>}
+          <p className="mt-4 text-xs leading-5 text-brand-blue-muted">By continuing, you agree that IFLI may contact you about this resource and relevant courses.</p>
+        </form>
       </div>
     </section>
   );

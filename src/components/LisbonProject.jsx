@@ -18,10 +18,10 @@ export default function LisbonProject() {
         {/* Header */}
         <motion.div className="text-center mb-16" {...fadeInUp}>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-[#012169]">
-            Apoiamos Causas Importantes
+            Learning with a wider purpose
           </h2>
           <p className="text-xl text-[#2D4B8E] max-w-2xl mx-auto leading-relaxed">
-            Na IFLI, orgulhamo-nos de apoiar organizações que fazem a diferença real nas comunidades de todo o mundo.
+            IFLI is proud to support organisations that create meaningful change in their communities.
           </p>
         </motion.div>
 
@@ -63,19 +63,18 @@ export default function LisbonProject() {
                 </h3>
 
                 <p className="text-lg text-[#2D4B8E] leading-relaxed mb-8 max-w-2xl mx-auto">
-                  Na IFLI, orgulhamo-nos de contribuir para a missão da Associação Lisbon Project.
+                  We are proud to contribute to the Lisbon Project Association and its work supporting people building a new life in Lisbon.
                 </p>
 
                 <div className="space-y-4 mb-10">
                   <p className="text-base text-[#012169] font-medium">
-                    Para saber mais sobre o Lisbon Project e o seu trabalho de impacto,<br />
-                    Visite o seu website e Siga-os nas redes sociais:
+                    Learn more about the Lisbon Project and follow its work:
                   </p>
 
                   {/* Social Links - Centered */}
                   <div className="flex flex-col items-center gap-3 text-sm text-[#2D4B8E]">
                     <div className="flex items-center gap-2">
-                      <Globe className="w-4 h-4 text-teal-600" />
+                      <Globe className="w-4 h-4 text-[#CE1124]" />
                       <a
                         href="https://www.lisbonproject.org"
                         target="_blank"
@@ -86,7 +85,7 @@ export default function LisbonProject() {
                       </a>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-teal-600" />
+                      <Users className="w-4 h-4 text-[#CE1124]" />
                       <a
                         href="https://www.instagram.com/lisbonprojectassociation"
                         target="_blank"
@@ -97,7 +96,7 @@ export default function LisbonProject() {
                       </a>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-teal-600" />
+                      <Users className="w-4 h-4 text-[#CE1124]" />
                       <a
                         href="https://www.facebook.com/lisbonprojectassociation"
                         target="_blank"
@@ -108,7 +107,7 @@ export default function LisbonProject() {
                       </a>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4 text-teal-600" />
+                      <Users className="w-4 h-4 text-[#CE1124]" />
                       <a
                         href="https://www.linkedin.com/company/lisbonprojectassociation/"
                         target="_blank"
@@ -129,19 +128,19 @@ export default function LisbonProject() {
                     rel="noopener noreferrer"
                   >
                     <motion.button
-                      className="group relative px-10 py-5 bg-linear-to-r from-teal-500 to-teal-600 text-white rounded-full font-semibold text-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                      className="group relative px-10 py-5 bg-[#CE1124] text-white rounded-full font-semibold text-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
                       id="btn-donate-lisbon"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <motion.div
-                        className="absolute inset-0 bg-linear-to-r from-teal-600 to-teal-700"
+                        className="absolute inset-0 bg-[#A80D1D]"
                         initial={{ x: "-100%" }}
                         whileHover={{ x: 0 }}
                         transition={{ duration: 0.3 }}
                       />
                       <span className="relative z-10 flex items-center justify-center gap-2">
-                        Doar Aqui
+                        Donate here
                         <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                       </span>
                     </motion.button>

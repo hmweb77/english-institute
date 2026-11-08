@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 
 const EXPERIENCES = [
-  { name: "Experiência de Imersão de Inverno", dates: "19 Jan – 27 Mar" },
-  { name: "Experiência de Imersão de Primavera", dates: "13 Abr – 19 Jun" },
-  { name: "Experiência de Imersão de Verão", dates: "13 Jul – 18 Set" },
-  { name: "Experiência de Imersão de Outono", dates: "12 Out – 18 Dez" },
+  { name: "Winter English Immersion", dates: "18 January – 26 March 2027" },
+  { name: "Spring English Immersion", dates: "Dates to be announced" },
+  { name: "Summer English Immersion", dates: "Dates to be announced" },
+  { name: "Autumn English Immersion", dates: "Dates to be announced" },
 ];
 
 const fadeInUp = {
@@ -25,21 +25,21 @@ export default function Experiences2026() {
           className="text-3xl md:text-4xl font-bold text-center text-[#012169] mb-12 tracking-tight"
           {...fadeInUp}
         >
-          Experiências 2026
+          2027 immersion experiences
         </motion.h2>
 
         <div className="grid gap-4 sm:gap-5">
           {EXPERIENCES.map((exp, i) => (
             <motion.div
               key={exp.name}
-              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 md:p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#C8102E]/20 transition-all duration-300"
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-5 md:p-6 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[#CE1124]/20 transition-all duration-300"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
             >
               <div className="flex items-start gap-3">
-                <div className="mt-1 p-2 rounded-lg bg-[#C8102E]/10 text-[#9B0E24]">
+                <div className="mt-1 p-2 rounded-lg bg-[#CE1124]/10 text-[#CE1124]">
                   <Calendar className="w-5 h-5" />
                 </div>
                 <div>

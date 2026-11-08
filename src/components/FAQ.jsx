@@ -1,168 +1,32 @@
-"use client"
+"use client";
 import { useState } from "react";
-import { ChevronDown, Search, HelpCircle, CheckCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.6, ease: "easeOut" }
-};
-
-const staggerItem = (index) => ({
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-100px" },
-  transition: { duration: 0.4, delay: index * 0.08, ease: "easeOut" }
-});
+const faqs = [
+  ["What if I cannot attend every live class?", "Every class is recorded and remains available for at least one year. Join live whenever possible for the interaction, then use the recording and transcripts whenever you need to catch up."],
+  ["Is the programme suitable for complete beginners?", "Yes. The programme supports all levels, including complete beginners. The free level test helps us guide you to the right group."],
+  ["How much time should I set aside?", "Live classes run for one hour a day, Monday to Friday, for 10 weeks. Short review and practice between classes will help you progress faster."],
+  ["How large are the groups?", "Each group has a minimum of four and a maximum of 10 participants."],
+  ["Will I become conversational in 10 weeks?", "You will build confidence using the English you know. Your result depends on your starting level, attendance and daily practice, so we focus on meaningful, measurable progress rather than unrealistic fluency promises."],
+  ["Can I keep the materials after the course?", "Yes. Course materials, class recordings and resources remain available for at least one year after the programme."],
+  ["What is the difference between Online and Premium?", "Both include the full live programme. Premium adds two individual teacher sessions, a progress check-in, weekend practice and a reduced rate for private classes."],
+  ["Is there a certificate?", "Yes. Participants receive an IFLI certificate of participation at the end of the experience."],
+  ["What is the refund policy?", "Online and Premium plans include a five-day money-back guarantee."],
+];
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(null);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const faqs = [
-    {
-      question: "E se não puder participar em todas as sessões ao vivo?",
-      answer: "Sem problema! Todas as sessões ao vivo são gravadas e ficam disponíveis por pelo menos 1 ano. Pode vê-las quando quiser, ao seu ritmo. Recomendamos participar ao vivo sempre que possível para a experiência interativa, mas as gravações garantem que nunca perde conteúdo.",
-    },
-    {
-      question: "Sou principiante absoluto. Este curso é para mim?",
-      answer: "Sim! Os programas foram criados para todos os níveis e são especialmente benéficos para iniciantes.",
-    },
-    {
-      question: "Qual é a política de reembolso?",
-      answer: "Oferecemos garantia de reembolso de 5 dias.",
-    },
-    {
-      question: "Quanto tempo devo dedicar por semana?",
-      answer: "Basta comprometer-se a fazer algo em inglês cerca de 1 hora por dia. Pode ser participar numa sessão ao vivo, rever uma gravação, ouvir música em inglês, ver TV, falar com falantes nativos ou qualquer atividade que envolva escuta ou prática.",
-    },
-    {
-      question: "Ficarei realmente conversacional em 10 semanas?",
-      answer: "Sim! Ficará conversacional no seu nível. O nosso método comprovado ajuda-lhe a ganhar confiança na comunicação com o que já sabe, em 10 semanas, se praticar todos os dias.",
-    },
-    {
-      question: "Posso ficar com os materiais após o curso?",
-      answer: "Sim. Tem acesso a todos os materiais, gravações e recursos por pelo menos 1 ano após o fim do curso.",
-    },
-    {
-      question: "Qual é a diferença entre os planos?",
-      answer: "As principais diferenças estão na inclusão de sessões ao vivo e apoio individual adicional 1-a-1.",
-    },
-    {
-      question: "Há certificado no final?",
-      answer: "Sim, todos os participantes recebem um certificado de participação no final da experiência. (Não é válido para nacionalidade.)",
-    },
-    {
-      question: "Posso mudar de plano mais tarde?",
-      answer: "Sim, pode fazer upgrade a qualquer momento. Não é possível fazer downgrade.",
-    }
-  ];
-
-  const filteredFaqs = faqs.filter(faq =>
-    faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const toggleAccordion = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
-  const categories = ["All", ...new Set(faqs.map(faq => faq.category))];
-  const [selectedCategory, setSelectedCategory] = useState("All");
-
-  const displayedFaqs = selectedCategory === "All" 
-    ? filteredFaqs 
-    : filteredFaqs.filter(faq => faq.category === selectedCategory);
-
+  const [open, setOpen] = useState(0);
   return (
-    <section id="faq" className="relative py-24 md:py-32 px-6 bg-linear-to-b from-white via-[#F5F6F7] to-white overflow-hidden" data-testid="section-faq">
-      {/* Background elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-[#C8102E]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#C8102E]/5 rounded-full blur-3xl" />
-
-      <div className="max-w-4xl mx-auto relative z-10">
-        {/* Header */}
-        <motion.div className="text-center mb-12" {...fadeInUp}>
-          
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-[#012169]" data-testid="text-faq-headline">
-            Perguntas Frequentes
-          </h2>
-          <p className="text-xl text-[#2D4B8E] leading-relaxed">
-          Tudo o que precisa de saber sobre as Experiências de Imersão da IFLI.
-          </p>
-        </motion.div>
-
-
-        {/* FAQ Accordion */}
-        <div className="space-y-4" data-testid="accordion-faq">
-          <AnimatePresence>
-            {displayedFaqs.length === 0 ? (
-              <motion.div
-                className="text-center py-12"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-              >
-                <p className="text-[#2D4B8E]">No questions found matching &quot;{searchTerm}&quot;</p>
-              </motion.div>
-            ) : (
-              displayedFaqs.map((faq, index) => (
-                <motion.div key={index} {...staggerItem(index)}>
-                  <motion.div 
-                    className="bg-white border-2 border-[#E3E5E8] rounded-2xl overflow-hidden hover:border-[#C8102E]/30 transition-all duration-300"
-                    data-testid={`accordion-item-${index}`}
-                    whileHover={{ boxShadow: "0px 10px 30px -10px rgba(0,0,0,0.1)" }}
-                  >
-                    <button
-                      onClick={() => toggleAccordion(index)}
-                      className="w-full text-left font-bold text-base px-6 py-6 flex items-center justify-between text-[#012169] hover:text-[#C8102E] transition-colors"
-                    >
-                      <span className="flex items-start gap-3 flex-1">
-                        <CheckCircle className={`w-5 h-5 shrink-0 mt-0.5 ${
-                          openIndex === index ? "text-[#C8102E]" : "text-[#E3E5E8]"
-                        }`} />
-                        {faq.question}
-                      </span>
-                      <motion.div
-                        animate={{ rotate: openIndex === index ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ChevronDown className="w-5 h-5 text-[#2D4B8E] shrink-0" />
-                      </motion.div>
-                    </button>
-                    
-                    <AnimatePresence>
-                      {openIndex === index && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="overflow-hidden"
-                        >
-                          <div className="px-6 pb-6 pl-14">
-                            <p className="text-[#2D4B8E] leading-relaxed text-base">
-                              {faq.answer}
-                            </p>
-                            <div className="mt-4">
-                              <span className="inline-block px-3 py-1 bg-[#C8102E]/10 text-[#C8102E] rounded-full text-xs font-medium">
-                                {faq.category}
-                              </span>
-                            </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.div>
-                </motion.div>
-              ))
-            )}
-          </AnimatePresence>
+    <section id="faq" className="bg-brand-red-pale px-5 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-4xl">
+        <p className="font-bold text-brand-red">Questions, answered</p>
+        <h2 className="mt-3 text-4xl font-extrabold tracking-[-0.04em] text-brand-blue-dark sm:text-5xl">Everything you need to know before you begin.</h2>
+        <div className="mt-10 divide-y divide-line border-y border-line">
+          {faqs.map(([question, answer], index) => <article key={question}>
+            <h3><button onClick={() => setOpen(open === index ? -1 : index)} className="flex min-h-16 w-full items-center justify-between gap-5 py-5 text-left font-extrabold text-brand-blue-dark" aria-expanded={open === index}><span>{question}</span><ChevronDown className={`size-5 shrink-0 text-brand-red transition-transform ${open === index ? "rotate-180" : ""}`} aria-hidden="true" /></button></h3>
+            {open === index && <p className="max-w-3xl pb-6 leading-7 text-brand-blue-muted">{answer}</p>}
+          </article>)}
         </div>
-
       </div>
     </section>
   );

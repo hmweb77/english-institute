@@ -1,9 +1,8 @@
 "use client"
-import { Star, Quote, Play, ChevronLeft, ChevronRight, Award, TrendingUp } from "lucide-react";
+import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -15,6 +14,7 @@ const fadeInUp = {
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(1);
   // const sectionRef = useRef(null);
   // const isInView = useInView(sectionRef, { once: true });
   // const [isAutoPlaying, setIsAutoPlaying] = useState(true);
@@ -76,7 +76,12 @@ export default function TestimonialsSection() {
     
   ];
 
-  const cardsToShow = typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 3;
+  useEffect(() => {
+    const updateCards = () => setCardsToShow(window.innerWidth < 768 ? 1 : 3);
+    updateCards();
+    window.addEventListener("resize", updateCards);
+    return () => window.removeEventListener("resize", updateCards);
+  }, []);
   const maxIndex = testimonials.length - cardsToShow;
 
   const nextSlide = () => {
@@ -131,8 +136,8 @@ export default function TestimonialsSection() {
       data-testid="section-testimonials"
     >
       {/* Background decorative elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-[#C8102E]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#C8102E]/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-0 w-96 h-96 bg-[#CE1124]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#CE1124]/5 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
@@ -140,10 +145,10 @@ export default function TestimonialsSection() {
           
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight text-[#012169]" data-testid="text-testimonials-headline">
-          Junte-se a alunos de todo o mundo.
+          Join learners from around the world.
           </h2>
           <p className="text-xl text-[#2D4B8E] max-w-2xl mx-auto leading-relaxed">
-          Histórias reais de pessoas que se tornaram falantes confiantes de inglês em apenas 10 semanas. Torne-se a nossa próxima história de sucesso.
+          Real experiences from learners building confidence through consistent live practice.
           </p>
         </motion.div>
 
@@ -155,7 +160,7 @@ export default function TestimonialsSection() {
           {/* Navigation Arrows */}
           <motion.button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-20 w-12 h-12 bg-white border-2 border-[#E3E5E8] rounded-full flex items-center justify-center hover:bg-[#C8102E] hover:border-[#C8102E] hover:text-white transition-all duration-300 shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-20 w-12 h-12 bg-white border-2 border-[#E3E5E8] rounded-full flex items-center justify-center hover:bg-[#CE1124] hover:border-[#CE1124] hover:text-white transition-all duration-300 shadow-lg md:-translate-x-4"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Previous testimonials"
@@ -165,7 +170,7 @@ export default function TestimonialsSection() {
 
           <motion.button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-20 w-12 h-12 bg-white border-2 border-[#E3E5E8] rounded-full flex items-center justify-center hover:bg-[#C8102E] hover:border-[#C8102E] hover:text-white transition-all duration-300 shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-20 w-12 h-12 bg-white border-2 border-[#E3E5E8] rounded-full flex items-center justify-center hover:bg-[#CE1124] hover:border-[#CE1124] hover:text-white transition-all duration-300 shadow-lg md:translate-x-4"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             aria-label="Next testimonials"
@@ -201,18 +206,18 @@ export default function TestimonialsSection() {
                       data-testid={`card-testimonial-${currentIndex + index}`}
                       whileHover={{ 
                   
-                        borderColor: "#C8102E",
+                        borderColor: "#CE1124",
                         transition: { duration: 0.3 }
                       }}
                     >
                       {/* Gradient overlay on hover */}
                       <motion.div
-                        className={`absolute inset-0 bg-linear-to-brr ${testimonial.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                        className={`absolute inset-0 bg-linear-to-br ${testimonial.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
                       />
 
                       {/* Quote icon */}
                       <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <Quote className="w-16 h-16 text-[#C8102E]" />
+                        <Quote className="w-16 h-16 text-[#CE1124]" />
                       </div>
 
                       {/* Star Rating */}
@@ -224,7 +229,7 @@ export default function TestimonialsSection() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.5 + i * 0.05 }}
                           >
-                            <Star className="w-5 h-5 fill-[#C8102E] text-[#C8102E]" />
+                            <Star className="w-5 h-5 fill-[#CE1124] text-[#CE1124]" />
                           </motion.div>
                         ))}
                       </div>
@@ -237,7 +242,7 @@ export default function TestimonialsSection() {
                       {/* Student Info */}
                       <div className="flex items-center gap-4 mb-4 relative z-10">
                         {/* <motion.div 
-                          className="relative w-14 h-14 rounded-full ring-2 ring-[#C8102E]/20 overflow-hidden" 
+                          className="relative w-14 h-14 rounded-full ring-2 ring-[#CE1124]/20 overflow-hidden"
                           data-testid={`avatar-testimonial-${currentIndex + index}`}
                           whileHover={{ scale: 1.1, rotate: 5 }}
                         >
@@ -265,7 +270,7 @@ export default function TestimonialsSection() {
                       </motion.div>
 
                       {/* Decorative corner */}
-                      <div className="absolute bottom-0 right-0 w-20 h-20 bg-linear-to-tl from-[#C8102E]/5 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-0 right-0 w-20 h-20 bg-linear-to-tl from-[#CE1124]/5 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </motion.div>
                   </motion.div>
                 ))}
@@ -280,7 +285,7 @@ export default function TestimonialsSection() {
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? 'w-8 bg-[#C8102E]' : 'w-2 bg-[#E3E5E8]'
+                  currentIndex === index ? 'w-8 bg-[#CE1124]' : 'w-2 bg-[#E3E5E8]'
                 }`}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
@@ -299,7 +304,7 @@ export default function TestimonialsSection() {
           transition={{ delay: 0.4 }}
         >
           <p className="text-lg text-[#2D4B8E] mb-4">
-             Torne-se a nossa próxima história de sucesso
+             Your English story can start here.
           </p>
          
         </motion.div>

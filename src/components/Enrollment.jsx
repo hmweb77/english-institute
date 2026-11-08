@@ -26,7 +26,7 @@ export default function EnrollmentModal({ open, onClose, selectedPlan }) {
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <h2 className="text-2xl font-bold text-[#012169]" data-testid="text-modal-title">
-            Pre-Enroll in Portuguese Immersion
+            Enrol in English Immersion
           </h2>
           <button
             onClick={onClose}
@@ -41,7 +41,7 @@ export default function EnrollmentModal({ open, onClose, selectedPlan }) {
         {isLoading && (
           <div className="absolute inset-0 flex items-center justify-center bg-white/80 rounded-xl z-10">
             <div className="text-center">
-              <Loader2 className="w-8 h-8 text-[#C8102E] animate-spin mx-auto mb-3" />
+              <Loader2 className="w-8 h-8 text-[#CE1124] animate-spin mx-auto mb-3" />
               <p className="text-sm text-[#2D4B8E]">Loading enrollment form...</p>
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function EnrollmentModal({ open, onClose, selectedPlan }) {
             onLoad={() => setIsLoading(false)}
             className="absolute inset-0 w-full h-full border-0"
             style={{ background: 'transparent' }}
-            title="Portuguese Immersion Enrollment Form"
+            title="English Immersion enrolment form"
           />
         </div>
       </div>

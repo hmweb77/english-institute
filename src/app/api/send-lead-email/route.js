@@ -63,35 +63,35 @@ export async function POST(request) {
                 name: name,
               },
             ],
-            subject: 'Your Portuguese Sample Resources are Here! 🇵🇹',
+            subject: 'Your IFLI English sample classroom is ready',
             htmlContent: `
               <!DOCTYPE html>
               <html>
                 <head>
                   <meta charset="utf-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Portuguese Sample Resources</title>
+                  <title>IFLI English sample resources</title>
                 </head>
-                <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #012169; max-width: 600px; margin: 0 auto; padding: 20px;">
-                  <div style="background: linear-gradient(135deg, #C8102E 0%, #9B0E24 100%); padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0;">
-                    <h1 style="color: white; margin: 0; font-size: 28px;">Your Portuguese Journey Starts Now! </h1>
+                <body style="font-family: Montserrat, Arial, sans-serif; line-height: 1.6; color: #001845; max-width: 600px; margin: 0 auto; padding: 20px;">
+                  <div style="background: #012169; border-bottom: 6px solid #CE1124; padding: 40px 20px; text-align: center; border-radius: 12px 12px 0 0;">
+                    <h1 style="color: white; margin: 0; font-size: 28px;">Your English sample classroom is ready</h1>
                   </div>
                   
                   <div style="background: #ffffff; padding: 40px 30px; border: 1px solid #E3E5E8; border-top: none; border-radius: 0 0 12px 12px;">
-                    <p style="font-size: 16px; margin-bottom: 20px;">Olá ${name}!</p>
+                    <p style="font-size: 16px; margin-bottom: 20px;">Hello ${name},</p>
                     
                     <p style="font-size: 16px; margin-bottom: 20px;">
-                      Thank you for your interest in our Portuguese Immersion Program! We're excited to help you begin your language learning journey.
+                      Thank you for your interest in IFLI English Immersion. Explore the sample classroom to see how lessons, recordings and resources work together.
                     </p>
                     
                     <div style="text-align: center; margin: 30px 0;">
-                      <a href="https://iflimmersion.com/en/ifli-portugues-sample-page/" style="display: inline-block; background: linear-gradient(135deg, #C8102E 0%, #A80D24 100%); color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px;">
+                      <a href="https://classroom.google.com/c/ODQ3MDQyNzg1MzMw?cjc=3jlexck4" style="display: inline-block; background: #CE1124; color: white; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 16px;">
                         Access Your Sample Resources
                       </a>
                     </div>
                     
                     <div style="background: #F5F6F7; padding: 20px; border-radius: 8px; margin: 30px 0;">
-                      <h2 style="color: #C8102E; margin-top: 0; font-size: 20px;">What You'll Get:</h2>
+                      <h2 style="color: #CE1124; margin-top: 0; font-size: 20px;">What you will receive:</h2>
                       <ul style="padding-left: 20px; margin: 15px 0;">
                         <li style="margin-bottom: 10px;">Sample IFLI account view</li>
                         <li style="margin-bottom: 10px;">1-hour recording of a sample session</li>
@@ -100,14 +100,14 @@ export async function POST(request) {
                       </ul>
                     </div>
                     
-                    <div style="background: #EEF1F9; border-left: 4px solid #C8102E; padding: 15px; margin: 30px 0;">
+                    <div style="background: #FFF4F5; border-left: 4px solid #CE1124; padding: 15px; margin: 30px 0;">
                       <p style="margin: 0; font-size: 14px;">
-                        <strong>💡 Ready for More?</strong> Our Immersion 2026 program starts October 12th. Enrollment closes October 11th!
+                        <strong>Ready for more?</strong> The next 10-week cohort runs from 18 January to 26 March 2027, with one live class every weekday.
                       </p>
                     </div>
                     
                     <div style="text-align: center; margin: 30px 0;">
-                      <a href="https://iflimmersion.com/ifli-portuguese-language-immersion#pricing" style="display: inline-block; background: transparent; color: #C8102E; padding: 12px 30px; text-decoration: none; border: 2px solid #C8102E; border-radius: 50px; font-weight: bold; font-size: 14px;">
+                      <a href="https://iflimmersion.com/ifli-english-language-immersion#pricing" style="display: inline-block; background: transparent; color: #CE1124; padding: 12px 30px; text-decoration: none; border: 2px solid #CE1124; border-radius: 50px; font-weight: bold; font-size: 14px;">
                         Learn More About Immersion
                       </a>
                     </div>
@@ -119,7 +119,7 @@ export async function POST(request) {
                   </div>
                   
                   <div style="text-align: center; padding: 20px; color: #2D4B8E; font-size: 12px;">
-                    <p>© 2026 IFLI - Instituto de Formação em Língua Portuguesa</p>
+                    <p>© 2027 IFLI - Foreign Language Immersion</p>
                     <p>Lisbon, Portugal</p>
                     <p style="margin-top: 10px;">
                       Questions? Contact us at ${whatsapp} (WhatsApp)

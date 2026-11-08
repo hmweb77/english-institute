@@ -26,7 +26,7 @@ export default function FreeTrialSection() {
     {
       level: "A1",
       time: "07:00",
-      title: "New Year, New Way of Learning Portuguese",
+      title: "Try an IFLI English class",
       description: "Perfect for early birds & different time zones",
       icon: "🌅",
       gradient: "from-orange-400 to-amber-500",
@@ -35,7 +35,7 @@ export default function FreeTrialSection() {
     {
       level: "A1",
       time: "19:00",
-      title: "New Year, New Way of Learning Portuguese",
+      title: "Try an IFLI English class",
       description: "Ideal for after-work learning",
       icon: "🌆",
       gradient: "from-blue-400 to-cyan-500",
@@ -45,8 +45,8 @@ export default function FreeTrialSection() {
     {
       level: "A2",
       time: "20:00",
-      title: "New Year, New Way of Learning Portuguese",
-      description: "For those with some Portuguese basics",
+      title: "Try an IFLI English class",
+      description: "For learners with some English basics",
       icon: "🌙",
       gradient: "from-purple-400 to-pink-500",
       link: "https://luma.com/ifli-languages", // Replace with actual link
@@ -66,8 +66,8 @@ export default function FreeTrialSection() {
       data-testid="section-free-trial"
     >
       {/* Background decorative elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-[#C8102E]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#C8102E]/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-0 w-96 h-96 bg-[#CE1124]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#CE1124]/5 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Section */}
@@ -99,9 +99,9 @@ export default function FreeTrialSection() {
               <motion.div
                 key={index}
                 className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-[#E3E5E8] rounded-full"
-                whileHover={{ scale: 1.05, borderColor: "#C8102E" }}
+                whileHover={{ scale: 1.05, borderColor: "#CE1124" }}
               >
-                <IconComponent className="w-4 h-4 text-[#C8102E]" />
+                <IconComponent className="w-4 h-4 text-[#CE1124]" />
                 <span className="text-sm font-medium text-[#012169]">{benefit.text}</span>
               </motion.div>
             );
@@ -115,12 +115,12 @@ export default function FreeTrialSection() {
               <Link href={session.link} target="_blank" rel="noopener noreferrer" className="block h-full">
                 <motion.div
                   className={`relative p-6 bg-white rounded-2xl border-2 ${
-                    session.popular ? "border-[#C8102E]" : "border-[#E3E5E8]"
+                    session.popular ? "border-[#CE1124]" : "border-[#E3E5E8]"
                   } overflow-hidden h-full cursor-pointer`}
                   whileHover={{
                     y: -8,
                     boxShadow: "0px 20px 40px -10px rgba(0,0,0,0.15)",
-                    borderColor: "#C8102E",
+                    borderColor: "#CE1124",
                   }}
                   transition={{ duration: 0.3 }}
                 >
@@ -141,7 +141,7 @@ export default function FreeTrialSection() {
 
                   {/* Time */}
                   <div className="flex items-center gap-2 mb-3">
-                    <Clock className="w-5 h-5 text-[#C8102E]" />
+                    <Clock className="w-5 h-5 text-[#CE1124]" />
                     <span className="text-2xl font-bold text-[#012169]">{session.time}</span>
                     <span className="text-sm text-[#2D4B8E]">UTC</span>
                   </div>
@@ -160,7 +160,7 @@ export default function FreeTrialSection() {
                     </div>
                     <div className={`flex items-center gap-1 text-sm font-semibold bg-gradient-to-r ${session.gradient} bg-clip-text text-transparent`}>
                       Register
-                      <ArrowRight className="w-4 h-4 text-[#C8102E]" />
+                      <ArrowRight className="w-4 h-4 text-[#CE1124]" />
                     </div>
                   </div>
                 </motion.div>

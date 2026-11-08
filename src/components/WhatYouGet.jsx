@@ -1,6 +1,6 @@
 "use client"
 import { Check, Video, BookOpen, Users, Award, Download, Smartphone, BarChart3, MessageSquare } from "lucide-react";
-import materialsImage from "../../public/getSec.png";
+import materialsImage from "../../public/photo_2026-03-03_17-25-27.jpg";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
@@ -29,7 +29,7 @@ export default function WhatYouGetSection({ onEnrollClick }) {
       color: "from-red-400 to-pink-500",
       bgColor: "bg-red-50",
       items: [
-        "30+ live interactive sessions with native speakers",
+        "50 live interactive hours with qualified facilitators",
         "Real-time Q&A and instant feedback",
         "Speaking practice with classmates",
         "Interactive exercises and activities"
@@ -41,7 +41,7 @@ export default function WhatYouGetSection({ onEnrollClick }) {
       color: "from-blue-400 to-cyan-500",
       bgColor: "bg-blue-50",
       items: [
-        "Complete A1 Portuguese textbook",
+        "Complete English learning materials",
         "Workbook with 200+ exercises",
         "Vocabulary flashcard sets",
         "Grammar reference guide"
@@ -54,7 +54,7 @@ export default function WhatYouGetSection({ onEnrollClick }) {
       bgColor: "bg-purple-50",
       items: [
         "All session recordings (1 year access)",
-        "Portuguese media library (podcasts, videos)",
+        "English media library (podcasts and videos)",
         "Mobile app for learning on the go",
         "Progress tracking dashboard"
       ]
@@ -62,8 +62,8 @@ export default function WhatYouGetSection({ onEnrollClick }) {
     {
       category: "Community & Support",
       icon: Users,
-      color: "from-green-400 to-emerald-500",
-      bgColor: "bg-green-50",
+      color: "from-[#012169] to-[#31528F]",
+      bgColor: "bg-[#EEF1F9]",
       items: [
         "Access to student community forum",
         "Study groups with peers",
@@ -86,8 +86,8 @@ export default function WhatYouGetSection({ onEnrollClick }) {
     <section className="relative py-24 md:py-32 px-6 bg-white overflow-hidden" data-testid="section-what-you-get">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-[#C8102E]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#C8102E]/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-0 w-96 h-96 bg-[#CE1124]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-72 h-72 bg-[#CE1124]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -99,7 +99,7 @@ export default function WhatYouGetSection({ onEnrollClick }) {
             Everything You Need to Succeed
           </h2>
           <p className="text-xl text-[#2D4B8E] max-w-2xl mx-auto leading-relaxed">
-            A complete Portuguese learning ecosystem designed for maximum results.
+            A complete English learning system designed for steady, practical progress.
           </p>
         </motion.div>
 
@@ -116,14 +116,14 @@ export default function WhatYouGetSection({ onEnrollClick }) {
             return (
               <motion.div
                 key={index}
-                className="text-center p-4 bg-white border-2 border-[#E3E5E8] rounded-xl hover:border-[#C8102E] transition-all"
+                className="text-center p-4 bg-white border-2 border-[#E3E5E8] rounded-xl hover:border-[#CE1124] transition-all"
                 whileHover={{ y: -5, scale: 1.05 }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
               >
-                <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-linear-to-br from-[#C8102E] to-[#9B0E24] flex items-center justify-center">
+                <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-[#CE1124] flex items-center justify-center">
                   <IconComponent className="w-6 h-6 text-white" />
                 </div>
                 <div className="text-sm font-bold text-[#012169] mb-1">{feature.title}</div>
@@ -151,7 +151,7 @@ export default function WhatYouGetSection({ onEnrollClick }) {
             >
               <Image 
                 src={materialsImage} 
-                alt="Portuguese learning materials" 
+                alt="London and the English-speaking world"
                 className="rounded-3xl w-full shadow-[0px_30px_50px_-12px_rgba(0,0,0,0.20),0px_15px_30px_-12px_rgba(0,0,0,0.12)] relative z-10"
                 data-testid="img-materials"
               />
@@ -240,7 +240,7 @@ export default function WhatYouGetSection({ onEnrollClick }) {
               transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
             >
               <motion.button 
-                className="group relative w-full md:w-auto px-10 py-6 rounded-full text-base font-semibold bg-linear-to-r from-[#C8102E] to-[#A80D24] text-white overflow-hidden shadow-lg"
+                className="group relative w-full md:w-auto px-10 py-6 rounded-full text-base font-semibold bg-[#CE1124] text-white overflow-hidden shadow-lg"
                 onClick={onEnrollClick}
                 data-testid="button-enroll-deliverables"
                 whileHover={{ scale: 1.02 }}
@@ -253,7 +253,7 @@ export default function WhatYouGetSection({ onEnrollClick }) {
                   transition={{ duration: 0.3 }}
                 />
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  Start Your Portuguese Journey
+                  Start Your English Journey
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}

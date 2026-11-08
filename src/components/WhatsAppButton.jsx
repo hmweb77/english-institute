@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       id="btn-whatsapp"
-      className="fixed bottom-24 right-6 z-50 group"
+      className="fixed bottom-24 right-6 z-50 hidden group md:block"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.3, delay: 0.5 }}
@@ -31,7 +31,7 @@ export default function WhatsAppButton() {
         transition={{ duration: 0.2 }}
         style={{ pointerEvents: 'none' }}
       >
-        Fala connosco no WhatsApp
+        Talk to us on WhatsApp
         <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45 w-2 h-2 bg-white" />
       </motion.div>
 

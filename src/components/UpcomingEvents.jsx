@@ -21,24 +21,24 @@ export default function UpcomingEventsSection() {
     >
       <div className="max-w-4xl mx-auto text-center">
         <motion.div {...fadeInUp}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#C8102E]/10 text-[#C8102E] rounded-full mb-6 font-medium text-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#CE1124]/10 text-[#CE1124] rounded-full mb-6 font-medium text-sm">
             <Calendar className="w-4 h-4" />
-            <span>Próximos Eventos</span>
+            <span>Upcoming events</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-tight text-[#012169]">
-            Junte-se a Nós ao Vivo
+            Meet IFLI live
           </h2>
           <p className="text-xl text-[#2D4B8E] mb-12 font-medium">
-            Eventos gratuitos, aulas de experiência e sessões de esclarecimento - sem compromisso.
+            Free events, sample classes and Q&amp;A sessions—with no commitment.
           </p>
 
           <div className="space-y-6 text-lg text-[#2D4B8E] leading-relaxed text-left max-w-2xl mx-auto mb-12">
             <p>
-              Ainda não tem a certeza se o IFLI é para si? Venha experimentar por conta própria. Realizamos regularmente eventos gratuitos, sessões abertas de perguntas e respostas e aulas experimentais de português - para que possa conhecer o nosso método antes de se inscrever.
+              Not sure whether IFLI is right for you? Join a free event, an open Q&amp;A or a sample English class and experience our approach before you enrol.
             </p>
             <p>
-              Consulte os próximos eventos e reserve o seu lugar - as vagas são limitadas.
+              Browse upcoming events and reserve your place. Capacity is limited.
             </p>
           </div>
 
@@ -46,12 +46,12 @@ export default function UpcomingEventsSection() {
             href={CALENDAR_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#C8102E] hover:bg-[#A80D24] text-white font-semibold rounded-full shadow-lg transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#CE1124] hover:bg-[#A80D1D] text-white font-semibold rounded-full shadow-lg transition-colors"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             data-testid="link-calendar"
           >
-            Ver o Calendário Completo
+            View the full calendar
             <ArrowRight className="w-5 h-5" />
           </motion.a>
         </motion.div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/Hero";
@@ -13,11 +13,11 @@ const AboutProgram = dynamic(() => import("@/components/About"), {
 });
 
 const BenefitsSection = dynamic(() => import("@/components/Benefits"), {
-  loading: () => <div className="min-h-screen bg-[#C8102E] animate-pulse" />
+  loading: () => <div className="min-h-screen bg-[#CE1124] animate-pulse" />
 });
 
 const PricingSection = dynamic(() => import("@/components/Pricing"), {
-  loading: () => <div className="min-h-screen bg-[#C8102E] animate-pulse" />
+  loading: () => <div className="min-h-screen bg-[#001845] animate-pulse" />
 });
 
 const TestimonialsSection = dynamic(() => import("@/components/Testimonials"), {
@@ -29,7 +29,7 @@ const UpcomingEventsSection = dynamic(() => import("@/components/UpcomingEvents"
 });
 
 const LeadMagnetSection = dynamic(() => import("@/components/LeadMagnet"), {
-  loading: () => <div className="min-h-screen bg-[#C8102E] animate-pulse" />
+  loading: () => <div className="min-h-screen bg-[#F6F7FA] animate-pulse" />
 });
 
 const FinalCTASection = dynamic(() => import("@/components/FinalCTA"), {
@@ -51,11 +51,7 @@ const Footer = dynamic(() => import("@/components/Footer"), {
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"), {
   ssr: false
 });
-const Toast = dynamic(() => import("@/components/Toast"));
-
-
 export default function Home() {
-  const [toasts, setToasts] = useState([]);
 
   // Preload Airtable connection for faster iframe loading
   useEffect(() => {
@@ -77,20 +73,6 @@ export default function Home() {
       document.head.removeChild(dnsPrefetch);
     };
   }, []);
-
-  const showToast = (title, description) => {
-    const id = Date.now();
-    setToasts(prev => [...prev, { id, title, description }]);
-    
-    // Auto remove after 5 seconds
-    setTimeout(() => {
-      setToasts(prev => prev.filter(toast => toast.id !== id));
-    }, 10000);
-  };
-
-  const removeToast = (id) => {
-    setToasts(prev => prev.filter(toast => toast.id !== id));
-  };
 
   const ENROLL_URL = "https://iflilanguages.fillout.com/registration";
   const handleEnrollClick = () => {
@@ -116,28 +98,15 @@ export default function Home() {
         <TestimonialsSection />
         <UpcomingEventsSection />
         <LeadMagnetSection onSubmit={handleLeadMagnetSubmit} />
-        <FinalCTASection onEnrollClick={() => handleEnrollClick()} />
         <Experiences2026Section />
         <FAQSection />
-       <LisbonProject/>
+        <LisbonProject />
+        <FinalCTASection onEnrollClick={() => handleEnrollClick()} />
         <Footer />
       </Suspense>
       
       <WhatsAppButton />
       
-      {/* Toast Container */}
-      {toasts.length > 0 && (
-        <div className="fixed bottom-6 right-6 flex flex-col gap-3 pointer-events-none z-50">
-          {toasts.map(toast => (
-            <Toast
-              key={toast.id}
-              title={toast.title}
-              description={toast.description}
-              onClose={() => removeToast(toast.id)}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }

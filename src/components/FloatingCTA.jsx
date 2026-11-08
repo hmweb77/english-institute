@@ -30,7 +30,7 @@ export default function FloatingCTA({ onEnrollClick }) {
           transition={{ duration: 0.3, ease: "easeOut" }}
         >
           <button
-            className="rounded-full px-8 py-6 shadow-[0px_30px_50px_-12px_rgba(0,0,0,0.20),0px_15px_30px_-12px_rgba(0,0,0,0.12)] font-semibold text-base bg-[#C8102E] text-white hover:bg-[#A80D24] transition-colors duration-200"
+            className="rounded-full px-8 py-6 shadow-[0px_30px_50px_-12px_rgba(0,0,0,0.20),0px_15px_30px_-12px_rgba(0,0,0,0.12)] font-semibold text-base bg-[#CE1124] text-white hover:bg-[#A80D1D] transition-colors duration-200"
             onClick={onEnrollClick}
             data-testid="button-floating-enroll"
           >
